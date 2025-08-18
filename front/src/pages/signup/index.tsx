@@ -10,6 +10,9 @@ import ErrorMessage from "../../components/errorMessage";
 import emailIcon from "../../assets/SignUp/emailIcon.svg";
 import userIcon from "../../assets/SignUp/userIcon.svg";
 import passwordIcon from "../../assets/SignUp/passwordIcon.svg";
+import viewPassword from "../../assets/SignUp/viewPassword.svg";
+import hidePassword from "../../assets/SignUp/hidePassword.svg";
+import { useState } from "react";
 
 const formSchema = z.object({
     firstName: z.string().nonempty("O primeiro nome é obrigatório"),
@@ -36,6 +39,25 @@ export default function SignUp(){
 
     const onSubmitForm = (data: FormData) => {
         console.log(data)
+    }
+
+
+    const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
+    const [inputTypePassword, setInputTypePassword] = useState<string>("password");
+
+    function handlePassword(){
+        setIsPasswordVisible(!isPasswordVisible);
+
+        inputTypePassword === "password" ? setInputTypePassword("text") : setInputTypePassword("password");
+    }
+
+    const [isCPasswordVisible, setIsCPasswordVisible] = useState<boolean>(false);
+    const [inputTypeCPassword, setInputTypeCPassword] = useState<string>("password");
+
+    function handleConfirmPassword(){
+        setIsCPasswordVisible(!isCPasswordVisible);
+
+        inputTypeCPassword === "password" ? setInputTypeCPassword("text") : setInputTypeCPassword("password");
     }
 
     return(
@@ -144,36 +166,48 @@ export default function SignUp(){
                         <div className="flex flex-col gap-3">
                             <span className="text-gray-950 text-sm font-semibold">Password</span>
 
-                            <div className="flex gap-3 items-center border border-gray-300 rounded-lg pl-3">
+                            <div className="flex gap-3 items-center border border-gray-300 rounded-lg px-3">
                                 <img src={passwordIcon} alt=""/>
 
                                 <input
-                                    type="password"
+                                    type={inputTypePassword}
                                     placeholder="Create a password"
                                     {...register("password")}
                                     className="w-full focus:outline-none h-10"
                                 />
+
+                                <button type="button" onClick={() => handlePassword()} className="cursor-pointer">
+                                    {isPasswordVisible ? 
+                                    <img src={hidePassword} alt="" className="w-6 h-6"/> :
+                                    <img src={viewPassword} alt="" className="w-6 h-6"/>}
+                                </button>
+                            </div>
 
                                 {errors?.password && (
                                     <ErrorMessage
                                         message={errors.password.message}
                                     />
                                 )}
-                            </div>
                         </div>
 
                         <div className="flex flex-col gap-3">
                             <span className="text-gray-950 text-sm font-semibold">Confirm password</span>
 
-                            <div className="flex gap-3 items-center border border-gray-300 rounded-lg pl-3">
+                            <div className="flex gap-3 items-center border border-gray-300 rounded-lg px-3">
                                 <img src={passwordIcon} alt=""/>
 
                                 <input
-                                    type="password"
+                                    type={inputTypeCPassword}
                                     placeholder="Confirm your password"
                                     {...register("confirmPassword")}
                                     className="w-full focus:outline-none h-10"
                                 />
+                                
+                                <button type="button" onClick={() => handleConfirmPassword()} className="cursor-pointer">
+                                    {isCPasswordVisible ? 
+                                    <img src={hidePassword} alt="" className="w-6 h-6"/> :
+                                    <img src={viewPassword} alt="" className="w-6 h-6"/>}
+                                </button>
                             </div>
 
 
