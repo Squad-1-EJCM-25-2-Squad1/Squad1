@@ -81,12 +81,11 @@ router.post("product/:produtoId/image",photoUpload.single("image"),ProductContro
 
 router.post("/signup", validateSignup, UserController.signup);
 router.post("/login", validateLogin, UserController.login);
-router.get("/user:userId", auth, validateUserIdParam, UserController.readUser);
-router.put("/user:userId", auth, validateUserIdParam, validateUserUpdateBody, UserController.updateUser);
+router.get("/user/:userId", auth, validateUserIdParam, UserController.readUser);
+router.put("/user/:userId", auth, validateUserIdParam, validateUserUpdateBody, UserController.updateUser);
 router.delete("/user/:userId", auth, validateUserIdParam, UserController.deleteUser);
 router.get("/me",auth, validateUserIdParam, UserController.readMe);
 
 //rota de teste para pegar os IDs, pode ser apagada depois
 router.get("/users", UserController.readAllUsers);
-
 export default router;
