@@ -81,7 +81,7 @@ export class OrderController {
   // Buscar pedidos por usuário
   public static async getOrdersByUser(req: Request, res: Response) {
     try {
-      const { userId } = req.params;
+      const userId = req.user as string;
 
       const orders = await prisma.order.findMany({
         where: { userId: userId },
