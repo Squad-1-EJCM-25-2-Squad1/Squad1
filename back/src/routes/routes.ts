@@ -22,23 +22,25 @@ const auth = passport.authenticate("jwt", { session: false });
 
 // Rotas de Wishlist
 router.post('/wishlist', WishlistController.createWishlist);
+//para testes
 router.get('/wishlist/user/:userId', WishlistController.getWishlistByUser);
 router.delete('/wishlist/:userId', WishlistController.deleteWishlist);
 
 // Rotas de Itens da Wishlist
-router.post('/wishlist/items', WishlistController.addItemToWishlist);
-router.get('/wishlist/:userId/items', WishlistController.getWishlistItems);
-router.delete('/wishlist/:userId/items/:product_id', WishlistController.removeItemFromWishlist);
-router.get('/wishlist/:userId/items/:product_id/check', WishlistController.checkProductInWishlist);
+//trocar para req de token
+router.post('/wishlist/items', auth, WishlistController.addItemToWishlist);
+router.get('/wishlist/items', auth, WishlistController.getWishlistItems);
+router.delete('/wishlist/items/:product_id', auth, WishlistController.removeItemFromWishlist);
+router.get('/wishlist/items/:product_id/check', auth, WishlistController.checkProductInWishlist);
 
 // Rotas de Order
-router.post('/orders', OrderController.createOrder);
-router.get('/orders/user/:userId', OrderController.getOrdersByUser);
-router.get('/orders/:orderId', OrderController.getOrderById);
-router.put('/orders/:orderId/status', OrderController.updateOrderStatus);
-router.post('/orders/:orderId/products', OrderController.addProductToOrder);
-router.delete('/orders/:orderId/products/:product_id', OrderController.removeProductFromOrder);
-router.get('/orders', OrderController.getAllOrders);
+router.post('/orders', auth, OrderController.createOrder); //auth
+router.get('/orders/user/:userId', auth, OrderController.getOrdersByUser); //auth
+router.get('/orders/:orderId', auth, OrderController.getOrderById); //auth
+router.put('/orders/:orderId/status', OrderController.updateOrderStatus); //auth
+router.post('/orders/:orderId/products', OrderController.addProductToOrder); //teste
+router.delete('/orders/:orderId/products/:product_id', OrderController.removeProductFromOrder); //teste
+router.get('/orders', OrderController.getAllOrders); //auth
 
 // --- Rotas de Variantes ---
 router.post("/variant", VariantController.createVariant);
@@ -94,5 +96,4 @@ router.get("/me", auth, validateUserIdParam, UserController.readMe);
 
 // Rota de teste para pegar os IDs
 router.get("/users", UserController.readAllUsers);
-
 export default router;

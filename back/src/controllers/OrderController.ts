@@ -9,7 +9,8 @@ export class OrderController {
   // Criar um novo pedido
   public static async createOrder(req: Request, res: Response) {
     try {
-      const { userId, address, products } = req.body;
+      const { address, products } = req.body;
+      const userId = req.user as string;
 
       // Validar se o usuário existe
       const user = await prisma.user.findUnique({

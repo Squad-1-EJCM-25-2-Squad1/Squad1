@@ -39,25 +39,25 @@ model User {
 }
 
 model Product {
-  id              String    @id @default(uuid())
-  name            String
-  description     String
-  basePrice       Decimal
-  isActive        Boolean   @default(true)
-  createdAt       DateTime  @default(now())
-  specifications  String?
+  id             String    @id @default(uuid())
+  name           String
+  description    String
+  basePrice      Decimal
+  isActive       Boolean   @default(true)
+  createdAt      DateTime  @default(now())
+  categoryId     String
+  category       Category  @relation(fields: [categoryId], references: [id])
 
-  categoryId      String
-  category        Category  @relation(fields: [categoryId], references: [id])
+  offerId        String?
+  offer          Offer?    @relation(fields: [offerId], references: [id]) 
   
-  orderProducts   OrderProduct[] // Relação com OrderProduct
+  orderProducts  OrderProduct[] // Relação com OrderProduct
 
-  images          ProductImage[]
-  reviews         Review[]
-  variants        Variant[]      
-  offers          Offer[] 
-  wishlistItems   WishlistItem[] 
-  //cartItems     CartItem[]
+  images         ProductImage[]
+  reviews        Review[]
+  variants       Variant[]  
+  wishlistItems  WishlistItem[] 
+  cartItems      CartItem[]
 }
 
 model ProductImage {
@@ -67,23 +67,26 @@ model ProductImage {
 
   productId     String
   product       Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
-}
+} 
 
-model Category {
-  id       String    @id @default(uuid())
-  name     String    @unique
-  products Product[]
-}   
-
-// falta implementar essa model completamente
 model Cart{
   id            String   @id @default(uuid())
-
   userId        String   @unique
   user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  items               CartItem[]
 }
 
-// Falta implementar a model CartItem tambem
+model CartItem {
+  id          String   @id @default(uuid())
+  cartId      String
+  productId   String
+  quantity    Int      @default(1)
+  
+  cart        Cart     @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  product     Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  
+  @@unique([cartId, productId]) // Garante que o mesmo produto não possa ser adicionado mais de uma vez no carrinho
+}
 
 model Wishlist {
   userId              String          @id 
@@ -127,7 +130,6 @@ model OrderProduct {
   product             Product         @relation(fields: [productId], references: [id])
   
   @@unique([orderId, productId])
-
 }
 
 model Review{
@@ -178,8 +180,7 @@ model Offer {
   endsAt        DateTime  
   isActive      Boolean   
 
-  productId     String    
-  product       Product   @relation(fields: [productId], references: [id]) 
+  products      Product[]  
 
   //cartItems     CartItem[]
 }
