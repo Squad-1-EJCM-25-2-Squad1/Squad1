@@ -29,13 +29,14 @@ router.get('/wishlist/user/:userId', WishlistController.getWishlistByUser);
 router.delete('/wishlist/:userId', WishlistController.deleteWishlist);
 
 // Rotas de Itens da Wishlist
-//trocar para req de token
+//trocar para req de token (todos)
 router.post('/wishlist/items', auth, WishlistController.addItemToWishlist);
 router.get('/wishlist/items', auth, WishlistController.getWishlistItems);
 router.delete('/wishlist/items/:product_id', auth, WishlistController.removeItemFromWishlist);
 router.get('/wishlist/items/:product_id/check', auth, WishlistController.checkProductInWishlist);
 
 // Rotas de Order
+//trocar req para token
 router.post('/orders', auth, OrderController.createOrder); //auth
 router.get('/orders/user/:userId', auth, OrderController.getOrdersByUser); //auth
 router.get('/orders/:orderId', auth, OrderController.getOrderById); //auth
