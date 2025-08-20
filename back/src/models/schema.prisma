@@ -9,9 +9,9 @@ datasource db {
 }
 
 enum Gender {
-  MASCULINO
-  FEMININO
-  OUTRO
+  Masculino
+  Feminino
+  Outro
 }
 
 enum DiscountType {
