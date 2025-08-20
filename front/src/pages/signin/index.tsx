@@ -12,6 +12,7 @@ import passwordIcon from "../../assets/SignUp/passwordIcon.svg";
 import viewPassword from "../../assets/SignUp/viewPassword.svg";
 import hidePassword from "../../assets/SignUp/hidePassword.svg";
 import { useState } from "react";
+import { useAuthContext } from "../../contexts/Auth.Context";
 
 const formSchema = z.object({
     email: z.email("Deve conter um email válido"),
@@ -26,8 +27,10 @@ export default function SignIn(){
         resolver: zodResolver(formSchema)
     });
 
+    const { handleLogin } = useAuthContext()
+
     const onSubmitForm = (data: FormData) => {
-        console.log(data)
+        handleLogin(data.email, data.password)
     }
 
 
