@@ -7,9 +7,9 @@ class OfferController {
     public async createOffer(req: Request, res: Response) {
         try {
             // Pegar os dados do corpo da requisição 
-            const { name, description, discountType, discountValue, startsAt, endsAt, isActive, productId } = req.body;
+            const { name, description, discountType, discountValue, startsAt, endsAt, isActive, products } = req.body;
 
-            if (!name || !discountType || discountValue === undefined || isActive === undefined || !startsAt || !endsAt || !productId ) {
+            if (!name || !discountType || discountValue === undefined || isActive === undefined || !startsAt || !endsAt || !products ) {
                 // Retorna um erro 400 se campos essenciais não estiverem presentes
                 return res.status(400).json({ message: 'Nome, tipo de desconto, valor de desconto, data de início, data de fim e ID do produto são campos obrigatórios.' });
             }
@@ -38,7 +38,7 @@ class OfferController {
                     startsAt: startDate,
                     endsAt: endDate,
                     isActive: isActive ?? true, // Define como true se não for fornecido
-                    productId
+                    products
                 }
             });
 
@@ -90,7 +90,7 @@ class OfferController {
             // Pegar o id da oferta
             const { id } = req.params;
             // Pegar os dados do corpo da requisição 
-            const { name, description, discountType, discountValue, startsAt, endsAt, isActive, productId } = req.body;
+            const { name, description, discountType, discountValue, startsAt, endsAt, isActive, products } = req.body;
 
             // Encontrar a oferta
             const existingOffer = await prisma.offer.findUnique({
@@ -124,7 +124,7 @@ class OfferController {
                     startsAt, 
                     endsAt, 
                     isActive,
-                    productId
+                    products
                 }
             });
 
