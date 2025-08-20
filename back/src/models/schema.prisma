@@ -45,7 +45,8 @@ model Product {
   basePrice      Decimal
   isActive       Boolean   @default(true)
   createdAt      DateTime  @default(now())
-  category       String
+  categoryId     String
+  category       Category  @relation(fields: [categoryId], references: [id])
 
   offerId        String?
   offer          Offer?    @relation(fields: [offerId], references: [id]) 
@@ -69,7 +70,7 @@ model ProductImage {
 } 
 
 model Cart{
-  id       String   @id @default(uuid())
+  id            String   @id @default(uuid())
   userId        String   @unique
   user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   items               CartItem[]

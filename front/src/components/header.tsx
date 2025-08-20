@@ -26,10 +26,10 @@ export default function Header(){
                 </button>
 
                 <ul className="gap-8 hidden lg:flex">
-                    <button className="cursor-pointer text-sm">New In</button>
-                    <button className="cursor-pointer text-sm">Women</button>
-                    <button className="cursor-pointer text-sm">Men</button>
-                    <button className="cursor-pointer text-sm">Sale</button>
+                    <button className="cursor-pointer text-base">New In</button>
+                    <button className="cursor-pointer text-base">Women</button>
+                    <button className="cursor-pointer text-base">Men</button>
+                    <button className="cursor-pointer text-base">Sale</button>
                 </ul>
 
                 <div className="relative flex gap-2 md:hidden">
