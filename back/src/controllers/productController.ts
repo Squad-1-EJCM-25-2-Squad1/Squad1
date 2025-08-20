@@ -14,9 +14,9 @@ export class ProductController {
                 name, 
                 description, 
                 basePrice, 
-                category } = req.body;
+                categoryId } = req.body;
     
-            if (!name || !description || !basePrice || !category) {
+            if (!name || !description || !basePrice || !categoryId) {
                 return res.status(400).json({ error: 'Required fields are missing' });
             }
             
@@ -25,7 +25,7 @@ export class ProductController {
                     name,
                     description,
                     basePrice,
-                    category,
+                    categoryId,
                 },
             });
 
@@ -96,7 +96,7 @@ export class ProductController {
                 description,
                 basePrice,
                 isActive,
-                category,
+                categoryId,
             } = req.body;
 
             const existingProduct = await prisma.product.findUnique({ 
@@ -116,7 +116,7 @@ export class ProductController {
                     description,
                     basePrice,
                     isActive,
-                    category,
+                    categoryId,
                 },
                 include: {
                     images: true,

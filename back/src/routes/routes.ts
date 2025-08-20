@@ -5,7 +5,7 @@ import VariantController from '../controllers/VariantController';
 import ColorController from '../controllers/ColorController';
 import SizeController from '../controllers/SizeController';
 import OfferController from '../controllers/OfferController';
-import { ProductController } from '../controllers/ProductController';
+import { ProductController } from '../controllers/productController';
 import { WishlistController } from '../controllers/WishlistController';
 import { OrderController } from '../controllers/OrderController';
 import { UserController } from "../controllers/UserController";
@@ -27,21 +27,19 @@ router.get('/wishlist/user/:userId', WishlistController.getWishlistByUser);
 router.delete('/wishlist/:userId', WishlistController.deleteWishlist);
 
 // Rotas de Itens da Wishlist
-//trocar para req de token (todos)
 router.post('/wishlist/items', auth, WishlistController.addItemToWishlist);
 router.get('/wishlist/items', auth, WishlistController.getWishlistItems);
 router.delete('/wishlist/items/:product_id', auth, WishlistController.removeItemFromWishlist);
 router.get('/wishlist/items/:product_id/check', auth, WishlistController.checkProductInWishlist);
 
 // Rotas de Order
-//trocar req para token
-router.post('/orders', auth, OrderController.createOrder); //auth
-router.get('/orders/user/:userId', auth, OrderController.getOrdersByUser); //auth
-router.get('/orders/:orderId', auth, OrderController.getOrderById); //auth
-router.put('/orders/:orderId/status', OrderController.updateOrderStatus); //auth
-router.post('/orders/:orderId/products', OrderController.addProductToOrder); //teste
-router.delete('/orders/:orderId/products/:product_id', OrderController.removeProductFromOrder); //teste
-router.get('/orders', OrderController.getAllOrders); //auth
+router.post('/orders', auth, OrderController.createOrder); 
+router.get('/orders/user/', auth, OrderController.getOrdersByUser); 
+router.get('/orders/:orderId', auth, OrderController.getOrderById); 
+router.put('/orders/:orderId/status', auth, OrderController.updateOrderStatus); 
+router.post('/orders/:orderId/products', OrderController.addProductToOrder); 
+router.delete('/orders/:orderId/products/:product_id', OrderController.removeProductFromOrder); 
+router.get('/orders', auth, OrderController.getAllOrders); 
 
 // --- Rotas de Variantes ---
 router.post("/variant", VariantController.createVariant);
