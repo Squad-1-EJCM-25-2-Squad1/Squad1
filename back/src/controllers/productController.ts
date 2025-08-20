@@ -14,9 +14,9 @@ export class ProductController {
                 name, 
                 description, 
                 basePrice, 
-                categoryId } = req.body;
+                category } = req.body;
     
-            if (!name || !description || !basePrice || !categoryId) {
+            if (!name || !description || !basePrice || !category) {
                 return res.status(400).json({ error: 'Required fields are missing' });
             }
             
@@ -25,11 +25,7 @@ export class ProductController {
                     name,
                     description,
                     basePrice,
-                    category: {
-                        connect: { 
-                            id: categoryId 
-                        },
-                    },
+                    category,
                 },
                 include: {
                     category: true,
@@ -86,10 +82,7 @@ export class ProductController {
                             size: true,
                         },
                     },
-                    offers: { 
-                        include: {
-                        },
-                    },   
+                    offer: true,  
                 },
             });
 
@@ -111,7 +104,7 @@ export class ProductController {
                 description,
                 basePrice,
                 isActive,
-                categoryId
+                category,
             } = req.body;
 
             const existingProduct = await prisma.product.findUnique({ 
@@ -131,7 +124,7 @@ export class ProductController {
                     description,
                     basePrice,
                     isActive,
-                    ...(categoryId && { category: { connect: { id: categoryId } } }),
+                    category,
                 },
                 include: {
                     category: true,
@@ -143,10 +136,7 @@ export class ProductController {
                             size: true,
                         },
                     },
-                    offers: { 
-                        include: {
-                        },
-                    },   
+                    offer: true 
                 },
             });
             
