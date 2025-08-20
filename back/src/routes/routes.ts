@@ -74,7 +74,7 @@ router.post("/product", validateProductCreateBody, ProductController.create);
 router.get("/product", ProductController.readAll);
 router.get("/product/:productId", validateProductIdParam, ProductController.readProduct);
 router.put("/product/:productId", validateProductIdParam, validateProductUpdateBody, ProductController.update);
-router.post("product/:produtoId/image", photoUpload.single("image"), ProductController.uploadImage);
+router.post("/product/:productId/image", photoUpload.single("image"), ProductController.uploadImage);
 
 // ======= Category =======
 router.post("/category", CategoryController.create);
