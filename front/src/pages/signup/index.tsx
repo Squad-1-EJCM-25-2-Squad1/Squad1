@@ -13,6 +13,7 @@ import passwordIcon from "../../assets/SignUp/passwordIcon.svg";
 import viewPassword from "../../assets/SignUp/viewPassword.svg";
 import hidePassword from "../../assets/SignUp/hidePassword.svg";
 import { useState } from "react";
+import { useAuthContext } from "../../contexts/Auth.Context";
 
 const formSchema = z.object({
     firstName: z.string().nonempty("O primeiro nome é obrigatório"),
@@ -38,7 +39,7 @@ export default function SignUp(){
     });
 
     const onSubmitForm = (data: FormData) => {
-        console.log(data)
+        handleSignup(data);
     }
 
 
@@ -58,6 +59,36 @@ export default function SignUp(){
         setIsCPasswordVisible(!isCPasswordVisible);
 
         inputTypeCPassword === "password" ? setInputTypeCPassword("text") : setInputTypeCPassword("password");
+    }
+
+    const {handleLogin} = useAuthContext();
+
+    const handleSignup = async (data: FormData) => {
+        const response = await fetch("http://localhost:3333/signup", {
+            method: "Post",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                firstName: data.firstName,
+                lastName: data.lastName,
+                imageSrc: "",
+                gender: "",
+                email: data.email,
+                birthDate: "",
+                phone: "",
+                password: data.password
+            }),
+        });
+
+        if (response.ok){  
+            const result = await response.json();
+            console.log("Signup successful:", result);
+            handleLogin(data.email, data.password);
+        } else{
+            const errorData = await response.json();
+            console.error("Signup failed:", errorData.message);
+        }
     }
 
     return(
