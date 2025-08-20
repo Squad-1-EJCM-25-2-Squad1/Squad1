@@ -27,9 +27,6 @@ export class ProductController {
                     basePrice,
                     category,
                 },
-                include: {
-                    category: true,
-                },
             });
 
             res.status(201).json(product);
@@ -43,7 +40,6 @@ export class ProductController {
         try {
             const products = await prisma.product.findMany({
                 include: {
-                    category: true,
                     images: true,
                     reviews: true,
                     variants: {
@@ -52,10 +48,7 @@ export class ProductController {
                             size: true,
                         },
                     },
-                    offers: { 
-                        include: {
-                        },
-                    },   
+                    offer: true,  
                 },
             });
 
@@ -73,7 +66,6 @@ export class ProductController {
             const foundProduct = await prisma.product.findUnique({
                 where: { id: productId},
                 include: {
-                    category: true,
                     images: true,
                     reviews: true,
                     variants: {
@@ -127,7 +119,6 @@ export class ProductController {
                     category,
                 },
                 include: {
-                    category: true,
                     images: true,
                     reviews: true,
                     variants: {

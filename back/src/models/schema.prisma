@@ -45,8 +45,6 @@ model Product {
   basePrice      Decimal
   isActive       Boolean   @default(true)
   createdAt      DateTime  @default(now())
-
-  categoryId     String
   category       String
 
   offerId        String?
