@@ -19,7 +19,9 @@ export const useAuthContext = () => {
 
 export const AuthContextProvider = ({children}: React.PropsWithChildren) => {
     const [message, setMessage] = useState<string | null>(null);
-    const [token, setToken] = useState<string | null>(null);
+    const [token, setToken] = useState<string | null>(() => {
+        return localStorage.getItem("token") || null;
+    });
     const navigate = useNavigate();
 
     const handleLogin = async (email: string, password: string) => {
@@ -37,12 +39,14 @@ export const AuthContextProvider = ({children}: React.PropsWithChildren) => {
         const data = await response.json();
         setMessage(data.message);
         setToken(data.token);
-        navigate("/");
+        navigate("/")
+
+        if(data.token) localStorage.setItem("token", data.token)
     };
 
     const handleLogout = () => {
         setToken(null);
-        navigate("/signup");
+        navigate("/login");
     }
 
     return (
