@@ -34,7 +34,7 @@ model User {
   wishlist   Wishlist? 
 
   //relaçoes com outras models
-  orders Order[]
+  orders  Order[]
   reviews Review[]
 }
 
@@ -45,6 +45,7 @@ model Product {
   basePrice      Decimal
   isActive       Boolean   @default(true)
   createdAt      DateTime  @default(now())
+
   categoryId     String
   category       Category  @relation(fields: [categoryId], references: [id])
 
@@ -69,11 +70,17 @@ model ProductImage {
   product       Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
 } 
 
+model Category {
+  id       String    @id @default(uuid())
+  name     String    @unique
+  products Product[]
+}   
+
 model Cart{
   id            String   @id @default(uuid())
   userId        String   @unique
   user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  items               CartItem[]
+  items         CartItem[]
 }
 
 model CartItem {
