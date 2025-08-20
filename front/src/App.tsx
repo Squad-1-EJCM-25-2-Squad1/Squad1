@@ -1,9 +1,9 @@
-import Sales from "./pages/sales";
+import Product from "./pages/product";
 
 function App() {
 
   return (
-    <Sales/>
+    <Product/>
   );
 }
 

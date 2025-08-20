@@ -57,7 +57,7 @@ export default function Sales(){
                             />
                         </div>
 
-                        <div className="flex flex-col lg:flex-row gap-8 lg:px-32 2xl:px-69">
+                        <div className="flex flex-col lg:flex-row gap-8 lg:px-4 2xl:px-32">
                             <div className="lg:w-64 flex flex-col gap-8">
                                 <div className="flex gap-2 lg:hidden text-gray-950 text-base font-semibold">
                                     <img src={filter} alt=""/>
@@ -195,6 +195,8 @@ export default function Sales(){
                                             oldPrice={product.oldPrice}
                                         />
                                     ))}
+
+                                    <button className="px-8 py-3 border border-gray-300 rounded-xl text-gray-950 text-sm font-semibold mb-8">Load More Products</button>
                                 </div>
                             </div>    
                         </div>       
