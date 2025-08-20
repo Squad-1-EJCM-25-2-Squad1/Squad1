@@ -1,9 +1,9 @@
-import Product from "./pages/product";
+import SignIn from "./pages/signin";
 
 function App() {
 
   return (
-    <Product/>
+    <SignIn/>
   );
 }
 
