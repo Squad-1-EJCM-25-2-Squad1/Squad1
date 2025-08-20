@@ -5,22 +5,20 @@ import VariantController from '../controllers/VariantController';
 import ColorController from '../controllers/ColorController';
 import SizeController from '../controllers/SizeController';
 import OfferController from '../controllers/OfferController';
-import { ProductController } from '../controllers/productController';
+import { ProductController } from '../controllers/ProductController';
 import { WishlistController } from '../controllers/WishlistController';
 import { OrderController } from '../controllers/OrderController';
 import { UserController } from "../controllers/UserController";
+import { CategoryController } from "../controllers/CategoryController"; 
 
 import { photoUpload } from '../config/uploader';
 
 import { validateSignup, validateLogin, validateUserIdParam, validateUserUpdateBody } from '../middlewares/userValidation';
-import { validateProductCreateBody,validateProductUpdateBody, validateProductIdParam } from '../middlewares/productValidation';
-import { validateOfferCreateBody,validateOfferUpdateBody,validateOfferIdParam } from '../middlewares/offerValidation';
-
-
+import { validateProductCreateBody, validateProductUpdateBody, validateProductIdParam } from '../middlewares/productValidation';
+import { validateOfferCreateBody, validateOfferUpdateBody, validateOfferIdParam } from '../middlewares/offerValidation';
 
 const router = Router();
 const auth = passport.authenticate("jwt", { session: false });
-
 
 // Rotas de Wishlist
 router.post('/wishlist', WishlistController.createWishlist);
@@ -70,23 +68,31 @@ router.get("/offer", OfferController.readAllOffers);
 router.put("/offer/:id", validateOfferIdParam, validateOfferUpdateBody, OfferController.updateOffer);
 router.delete("/offer/:id", validateOfferIdParam, OfferController.deleteOffer);
 
-// ======= Product
-
+// ======= Product =======
 router.post("/product", validateProductCreateBody, ProductController.create);
 router.get("/product", ProductController.readAll);
 router.get("/product/:productId", validateProductIdParam, ProductController.readProduct);
 router.put("/product/:productId", validateProductIdParam, validateProductUpdateBody, ProductController.update);
-router.post("product/:produtoId/image",photoUpload.single("image"),ProductController.uploadImage);
+router.post("product/:produtoId/image", photoUpload.single("image"), ProductController.uploadImage);
 
+// ======= Category =======
+router.post("/category", CategoryController.create);
+router.get("/category/:id", CategoryController.read);
+router.get("/category", CategoryController.readAll);
+router.put("/category/:id", CategoryController.update);
+router.delete("/category/:id", CategoryController.delete);
+router.post("/category/populate", CategoryController.populateDefaults);
+router.post("/category/products", CategoryController.getProductsByCategories); 
 
+// ======= User =======
 router.post("/signup", validateSignup, UserController.signup);
 router.post("/login", validateLogin, UserController.login);
 router.get("/user/:userId", auth, validateUserIdParam, UserController.readUser);
 router.put("/user/:userId", auth, validateUserIdParam, validateUserUpdateBody, UserController.updateUser);
 router.delete("/user/:userId", auth, validateUserIdParam, UserController.deleteUser);
-router.get("/me",auth, validateUserIdParam, UserController.readMe);
+router.get("/me", auth, validateUserIdParam, UserController.readMe);
 
-//rota de teste para pegar os IDs, pode ser apagada depois
+// Rota de teste para pegar os IDs
 router.get("/users", UserController.readAllUsers);
 
 export default router;
