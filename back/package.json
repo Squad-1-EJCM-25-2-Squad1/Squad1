@@ -8,11 +8,12 @@
     "migrate": "npx prisma migrate dev --schema=src/models/schema.prisma",
     "generate": "npx prisma generate --schema=src/models/schema.prisma",
     "studio": "npx prisma studio --schema=src/models/schema.prisma",
-    "seed": "npm exec prisma db seed",
+    "seed": "npx ts-node --project ./tsconfig.json src/models/seed/seed.ts",
     "keys": "npx ts-node src/config/generateRSAKeyPair.ts"
   },
   "prisma": {
-    "schema": "src/models/schema.prisma"
+    "schema": "src/models/schema.prisma",
+    "seed": "ts-node seed.ts"
   },
   "keywords": [],
   "author": "",
@@ -27,9 +28,11 @@
     "multer": "^2.0.2",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
+    "uuid": "^11.1.0",
     "zod": "^4.0.17"
   },
   "devDependencies": {
+    "@faker-js/faker": "^9.9.0",
     "@prisma/client": "^6.13.0",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.0",
