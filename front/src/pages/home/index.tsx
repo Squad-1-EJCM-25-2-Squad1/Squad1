@@ -44,18 +44,21 @@ export default function Home(){
                         image = {shippingIcon}
                         title = "Free Shipping"
                         subtitle = "Free shipping on orders over $100"
+                        hasBackground = {true}
                     />
 
                     <InfoIcons       
                         image = {returnsIcon}
                         title = "Easy Returns"
                         subtitle = "30-day hassle-free returns"
+                        hasBackground = {true}
                     />
 
                     <InfoIcons       
                         image = {securityIcon}
                         title = "Secure Payment"
                         subtitle = "Your payment information is safe"
+                        hasBackground = {true}
                     />
                 </div>
 

@@ -55,7 +55,7 @@ class SizeController {
     public async readAllSizes(req: Request, res: Response) {
         try {
             // Encontrar todos os tamanhos
-            const foundSizes = await prisma.offer.findMany();
+            const foundSizes = await prisma.size.findMany();
 
             // Retorna que todos os tamanhos foram encontrados com sucesso
             res.status(200).json(foundSizes);
@@ -83,12 +83,26 @@ class SizeController {
                 return res.status(404).json({ message: 'Tamanho não encontrado.' });
             }
 
+            // Validar se o campo foi fornecido para atualização
+            if (!label) {
+                return res.status(400).json({ 
+                    message: 'O campo label deve ser fornecido para atualização.' 
+                });
+            }
+
+            // Criar objeto de dados para atualização com validação
+            const updateData: Partial<{ label: string }> = {};
+            
+            if (label !== undefined && label !== null && label.trim() !== '') {
+                updateData.label = label.trim();
+            }
+
             // Atualizar os dados do tamanho
             const updatedSize = await prisma.size.update({
                 where: {
                     id: id
                 },
-                data: { label }
+                data: updateData
             });
 
             // Retorna que o tamanho foi atualizado com sucesso
