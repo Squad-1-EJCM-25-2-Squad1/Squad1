@@ -36,9 +36,9 @@ router.delete('/wishlist/items/:product_id', auth, WishlistController.removeItem
 router.get('/wishlist/items/:product_id/check', auth, WishlistController.checkProductInWishlist);
 
 // Rotas de Order
-router.post('/orders', OrderController.createOrder); //auth
-router.get('/orders/user/:userId', OrderController.getOrdersByUser); //auth
-router.get('/orders/:orderId', OrderController.getOrderById); //auth
+router.post('/orders', auth, OrderController.createOrder); //auth
+router.get('/orders/user/:userId', auth, OrderController.getOrdersByUser); //auth
+router.get('/orders/:orderId', auth, OrderController.getOrderById); //auth
 router.put('/orders/:orderId/status', OrderController.updateOrderStatus); //auth
 router.post('/orders/:orderId/products', OrderController.addProductToOrder); //teste
 router.delete('/orders/:orderId/products/:product_id', OrderController.removeProductFromOrder); //teste
