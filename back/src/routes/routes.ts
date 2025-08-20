@@ -5,7 +5,7 @@ import VariantController from '../controllers/VariantController';
 import ColorController from '../controllers/ColorController';
 import SizeController from '../controllers/SizeController';
 import OfferController from '../controllers/OfferController';
-import { ProductController } from '../controllers/productController';
+import { ProductController } from '../controllers/ProductController';
 import { WishlistController } from '../controllers/WishlistController';
 import { OrderController } from '../controllers/OrderController';
 import { UserController } from "../controllers/UserController";
