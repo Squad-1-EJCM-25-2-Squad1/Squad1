@@ -56,7 +56,7 @@ class ColorController {
     public async readAllColors(req: Request, res: Response) {
         try {
             // Encontrar todas as cores
-            const foundColors = await prisma.offer.findMany();
+            const foundColors = await prisma.color.findMany();
     
             // Retorna que todas as cores foram encontradas com sucesso
             res.status(200).json(foundColors);
@@ -84,15 +84,30 @@ class ColorController {
                 return res.status(404).json({ message: 'Cor não encontrada.' });
             } 
 
+            // Validar se pelo menos um campo foi fornecido para atualização
+            if (!name && !hexCode) {
+                return res.status(400).json({ 
+                    message: 'Pelo menos um name ou hexCode deve ser fornecido para atualização.' 
+                });
+            }
+
+            // Criar objeto de dados para atualização apenas com campos fornecidos
+            const updateData: Partial<{ name: string; hexCode: string }> = {};
+            
+            if (name !== undefined && name !== null && name.trim() !== '') {
+                updateData.name = name.trim();
+            }
+            
+            if (hexCode !== undefined && hexCode !== null && hexCode.trim() !== '') {
+                updateData.hexCode = hexCode.trim();
+            }
+
             // Atualizar os dados da cor
             const updatedColor = await prisma.color.update({
                 where: {
                     id: id
                 },
-                data: {
-                    name,
-                    hexCode
-                }
+                data: updateData
             });
 
             // Retorna que a cor foi atualizada com sucesso
