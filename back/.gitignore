@@ -5,6 +5,11 @@ node_modules/
 *.jpg
 .env
 .idea
+/models/migrations/
+
+src/models/migrations
+package-lock.json
+src/generated/
 
 id_rsa_priv.pem
 id_rsa_pub.pem
