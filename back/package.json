@@ -30,7 +30,7 @@
     "zod": "^4.0.17"
   },
   "devDependencies": {
-    "@prisma/client": "^6.13.0",
+    "@prisma/client": "^6.14.0",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.0",
     "@types/multer": "^2.0.0",
