@@ -65,13 +65,13 @@ export default function SignIn(){
                     </div>
 
                     <div className="flex flex-col gap-3">
-                        <button className="w-full h-10 flex justify-center items-center gap-4 border border-gray-300 rounded-xl text-gray-950 text-sm font-semibold">
+                        <button className="w-full h-10 flex justify-center items-center gap-4 border border-gray-300 rounded-xl text-gray-950 text-sm font-semibold hover:bg-gray-200 cursor-pointer">
                             <img src={googleIcon} alt=""/>
                             
                             Continue with Google
                         </button>
 
-                        <button className="w-full h-10 flex justify-center items-center gap-4 border border-gray-300 rounded-xl text-gray-950 text-sm font-semibold">
+                        <button className="w-full h-10 flex justify-center items-center gap-4 border border-gray-300 rounded-xl text-gray-950 text-sm font-semibold hover:bg-gray-200 cursor-pointer">
                             <img src={facebookIcon} alt=""/>
 
                             Continue with Facebook
@@ -110,7 +110,7 @@ export default function SignIn(){
                             <div className="flex justify-between items-center">
                                 <span className="text-gray-950 text-sm font-semibold">Password</span>
 
-                                <span className="text-gray-950 text-sm font-normal cursor-pointer hover:text-purple-500">Forgot password?</span>
+                                <span className="text-gray-950 text-sm font-normal cursor-pointer hover:underline">Forgot password?</span>
                             </div>
 
                             <div className="flex gap-3 items-center border border-gray-300 rounded-lg px-3">
@@ -137,17 +137,17 @@ export default function SignIn(){
                                 )}
                         </div>
 
-                        <button className="w-full h-11 bg-black text-white text-center items-center rounded-xl cursor-pointer">Sign In</button>      
+                        <button className="w-full h-11 bg-black text-white text-center items-center rounded-xl cursor-pointer hover:font-semibold hover:opacity-90">Sign In</button>      
                     </form>
                     
                     <div className="flex justify-center gap-1">
                         <span className="text-gray-500 text-sm font-normal">Don't have an account?</span>
 
-                        <span className="text-gray-950 text-sm font-semibold cursor-pointer">Sign up</span>
+                        <span className="text-gray-950 text-sm font-semibold cursor-pointer hover:underline">Sign up</span>
                     </div>
                 </div>
 
-                <p className="text-gray-500 text-sm font-normal text-center">By signin in, you agree to our <span className="text-gray-950 text-sm font-normal cursor-pointer hover:text-purple-500">Terms of Service</span> and <span className="text-gray-950 text-sm font-normal cursor-pointer hover:text-purple-500">Privacy Policy</span></p>
+                <p className="text-gray-500 text-sm font-normal text-center">By signin in, you agree to our <span className="text-gray-950 text-sm font-normal cursor-pointer hover:underline">Terms of Service</span> and <span className="text-gray-950 text-sm font-normal cursor-pointer hover:underline">Privacy Policy</span></p>
             </main>
         </div>
     )

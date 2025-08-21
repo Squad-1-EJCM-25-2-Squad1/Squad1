@@ -14,6 +14,7 @@ import viewPassword from "../../assets/SignUp/viewPassword.svg";
 import hidePassword from "../../assets/SignUp/hidePassword.svg";
 import { useState } from "react";
 import { useAuthContext } from "../../contexts/Auth.Context";
+import check from "../../assets/SignUp/check.svg";
 
 const formSchema = z.object({
     firstName: z.string().nonempty("O primeiro nome é obrigatório"),
@@ -113,13 +114,13 @@ export default function SignUp(){
                     </div>
 
                     <div className="flex flex-col gap-3">
-                        <button className="w-full h-10 flex justify-center items-center gap-4 border border-gray-300 rounded-xl text-gray-950 text-sm font-semibold">
+                        <button className="w-full h-10 flex justify-center items-center gap-4 border border-gray-300 rounded-xl text-gray-950 text-sm font-semibold hover:bg-gray-200 cursor-pointer">
                             <img src={googleIcon} alt=""/>
                             
                             Continue with Google
                         </button>
 
-                        <button className="w-full h-10 flex justify-center items-center gap-4 border border-gray-300 rounded-xl text-gray-950 text-sm font-semibold">
+                        <button className="w-full h-10 flex justify-center items-center gap-4 border border-gray-300 rounded-xl text-gray-950 text-sm font-semibold hover:bg-gray-200 cursor-pointer">
                             <img src={facebookIcon} alt=""/>
 
                             Continue with Facebook
@@ -250,15 +251,20 @@ export default function SignUp(){
                         </div>
 
 
-                        <div className="w-full flex gap-2">  
+                        <label htmlFor="terms" className="w-full flex gap-2 items-center">  
                             <input
                                 type="checkbox"
                                 id="terms"
                                 {...register("terms")}
+                                className="hidden peer"
                             />
 
-                            <label htmlFor="terms" className="text-gray-950 text-sm font-semibold">I agree to the Terms of Service and Privacy Policy</label>
-                        </div>
+                            <span className="flex w-4 h-4 border border-gray-400 rounded-sm justify-center items-center peer-checked:bg-black peer-checked:border-transparent cursor-pointer">
+                                <img src={check} alt="" className="peer-checked:block"/>
+                            </span>
+
+                            <label htmlFor="terms" className="text-gray-950 text-sm gap-1 font-semibold">I agree to the <span className="hover:underline cursor-pointer">Terms of Service</span> and <span className="hover:underline cursor-pointer">Privacy Policy</span></label>
+                        </label>
 
                         {errors?.terms && (
                             <ErrorMessage
@@ -266,23 +272,28 @@ export default function SignUp(){
                             />
                         )}
 
-                        <div className="w-full flex gap-2">  
+                        <label htmlFor="newsletterSubscription" className="w-full flex gap-2 items-center">  
                             <input
                                 type="checkbox"
                                 id="newsletterSubscription"
                                 {...register("newsletterSubscription")}
+                                className="hidden peer"
                             />
 
-                            <label htmlFor="newsletterSubscription" className="text-gray-950 text-sm font-semibold">Subscribe to our newsletter for exclusive offers and updates</label>
-                        </div>
+                            <span className="flex w-4 h-4 border border-gray-400 rounded-sm justify-center items-center peer-checked:bg-black peer-checked:border-transparent cursor-pointer">
+                                <img src={check} alt="" className="peer-checked:block"/>
+                            </span>
 
-                        <button className="w-full h-11 bg-black text-white text-center items-center rounded-xl cursor-pointer">Create Account</button>      
+                            <label htmlFor="newsletterSubscription" className="text-gray-950 text-sm font-semibold">Subscribe to our newsletter for exclusive offers and updates</label>
+                        </label>
+
+                        <button className="w-full h-11 bg-black text-white text-center items-center rounded-xl cursor-pointer hover:font-semibold hover:opacity-90">Create Account</button>      
                     </form>
                     
                     <div className="flex justify-center gap-1">
                         <span className="text-gray-500 text-sm font-normal">Already have an account?</span>
 
-                        <span className="text-gray-950 text-sm font-semibold cursor-pointer">Sign in</span>
+                        <span className="text-gray-950 text-sm font-semibold cursor-pointer hover:underline">Sign in</span>
                     </div>
                 </div>
 

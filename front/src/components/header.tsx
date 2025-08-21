@@ -18,7 +18,9 @@ export default function Header(){
             </div>
 
             <div className="flex w-full justify-around border-b-1 border-b-[#E5E7EB] py-4 md:px-5">
-                <img src={hamburger} alt="" className="md:hidden cursor-pointer"/>
+                <button className="flex justify-center items-center md:hidden h-10 w-10 rounded-lg hover:bg-[#F3F4F6]">
+                    <img src={hamburger} alt="" className="md:hidden cursor-pointer"/>
+                </button>
 
                 <button className="flex gap-2 items-center font-bold text-base md:text-xl cursor-pointer">
                     <img src={logo} alt=""/>
@@ -26,21 +28,21 @@ export default function Header(){
                 </button>
 
                 <ul className="gap-8 hidden lg:flex">
-                    <button className="cursor-pointer text-base">New In</button>
-                    <button className="cursor-pointer text-base">Women</button>
-                    <button className="cursor-pointer text-base">Men</button>
-                    <button className="cursor-pointer text-base">Sale</button>
+                    <button className="cursor-pointer text-lg hover:font-semibold">New In</button>
+                    <button className="cursor-pointer text-lg hover:font-semibold">Women</button>
+                    <button className="cursor-pointer text-lg hover:font-semibold">Men</button>
+                    <button className="cursor-pointer text-lg hover:font-semibold">Sale</button>
                 </ul>
 
                 <div className="relative flex gap-2 md:hidden">
                     {
                         !mobileSearch && input === "" &&(
                             <>
-                                <button onClick={() => setMobileSearch(!mobileSearch)} className="flex justify-center items-center h-10 w-10">
+                                <button onClick={() => setMobileSearch(!mobileSearch)} className="flex justify-center items-center h-10 w-10 rounded-lg hover:bg-[#F3F4F6]">
                                     <img src={lupa} alt="" className="cursor-pointer"/>
                                 </button>
 
-                                <button className="flex justify-center items-center h-10 w-10">
+                                <button className="flex justify-center items-center h-10 w-10 rounded-lg hover:bg-[#F3F4F6]">
                                     <img src={favorito} alt="" className="cursor-pointer"/>
                                 </button>
 
@@ -50,7 +52,7 @@ export default function Header(){
                                     </div>
                                 </button>
 
-                                <button className="flex justify-center items-center h-10 w-10">
+                                <button className="flex justify-center items-center h-10 w-10 rounded-lg hover:bg-[#F3F4F6]">
                                     <img src={carrinho} alt="" className="cursor-pointer"/>
                                 </button>
                                 
@@ -93,7 +95,7 @@ export default function Header(){
                 </div>
 
                 <div className="hidden md:flex md:gap-2">
-                    <button className="flex justify-center items-center h-10 w-10">
+                    <button className="flex justify-center items-center h-10 w-10 rounded-lg hover:bg-[#F3F4F6]">
                         <img src={favorito} alt="" className="cursor-pointer"/>
                     </button>
 
@@ -103,7 +105,7 @@ export default function Header(){
                         </div>
                     </button>
 
-                    <button className="flex justify-center items-center h-10 w-10">
+                    <button className="flex justify-center items-center h-10 w-10 rounded-lg hover:bg-[#F3F4F6]">
                         <img src={carrinho} alt="" className="cursor-pointer"/>
                     </button>
 

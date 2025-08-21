@@ -8,7 +8,7 @@ interface ColorSelectionProps{
 export default function ColorSelection(props: ColorSelectionProps){
     let isSelected = props.selectedColor === props.bgColor;
 
-    const borderColor = isSelected ? "border-purple-600" : "border-gray-300" 
+    const borderColor = isSelected ? "border-gray-700" : "border-gray-300" 
 
     let bgOpacity = "opacity-100"
 

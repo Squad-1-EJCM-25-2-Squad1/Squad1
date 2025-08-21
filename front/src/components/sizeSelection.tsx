@@ -15,10 +15,10 @@ export default function SizeSelection(props: SizeSelectionProps){
     }
     
     const isSelected = props.selectedSize === props.size;
-    const borderColor = isSelected ? "border-purple-600" : "border-gray-300";
+    const borderColor = isSelected ? "border-gray-700" : "border-gray-300";
 
     return(
-        <button disabled={!props.onStock} onClick={() => props.onClick(props.size)} style={{backgroundColor: bgColor}}className={`flex justify-center items-center w-16 h-12 text-gray-950 text-base font-normal border-2 rounded-xl ${borderColor} ${bgOpacity} cursor-pointer`}>
+        <button disabled={!props.onStock} onClick={() => props.onClick(props.size)} style={{backgroundColor: bgColor}}className={`flex justify-center items-center w-16 h-12 text-gray-950 text-base font-normal border rounded-xl ${borderColor} ${bgOpacity} cursor-pointer`}>
             {props.size}
         </button>
     )

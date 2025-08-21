@@ -1,5 +1,5 @@
 import Header from "../../components/header";
-import noImage from "../../assets/home/noImage.png";
+import noImage from "../../assets/home/noImage.svg";
 import { Navigation, Pagination, FreeMode, Thumbs } from 'swiper/modules';
 import '../../globals.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -68,7 +68,7 @@ export default function Product(){
         <div className="flex flex-col">
             <Header/>
 
-                <nav className="text-gray-500 text-sm font-normal my-8 mx-4">
+                <nav className="text-gray-500 text-sm font-normal my-8 mx-4 md:mx-20 xl:mx-40 2xl:mx-60">
                     <ol className="flex gap-1">
                         <li><button className="cursor-pointer">Home /</button></li>
                         <li><button className="cursor-pointer">Sale /</button></li>
@@ -76,7 +76,7 @@ export default function Product(){
                     </ol>
                 </nav>
 
-            <main className="relative flex flex-col py-8 px-4">
+            <main className="relative flex flex-col py-8 px-4 md:px-20 xl:px-40 2xl:px-40">
                 <div className="grid grid-cols-1 lg:grid-cols-2 items-start">
                     <div className="w-85 lg:w-100 xl:w-125 2xl:w-165 mx-auto mb-12">
                         <Swiper
