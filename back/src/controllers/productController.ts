@@ -1,7 +1,6 @@
 // src/controllers/product.controller.ts
 import { PrismaClient, Prisma } from '../generated/prisma';
 import { Request, Response } from 'express';
-import { Param } from '../generated/prisma/runtime/library';
 
 const prisma = new PrismaClient();
 

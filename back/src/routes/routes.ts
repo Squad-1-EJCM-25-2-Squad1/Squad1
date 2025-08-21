@@ -28,20 +28,19 @@ router.get('/wishlist/user/:userId', WishlistController.getWishlistByUser);
 router.delete('/wishlist/:userId', WishlistController.deleteWishlist);
 
 // Rotas de Itens da Wishlist
-//trocar para req de token
 router.post('/wishlist/items', auth, WishlistController.addItemToWishlist);
 router.get('/wishlist/items', auth, WishlistController.getWishlistItems);
 router.delete('/wishlist/items/:product_id', auth, WishlistController.removeItemFromWishlist);
 router.get('/wishlist/items/:product_id/check', auth, WishlistController.checkProductInWishlist);
 
 // Rotas de Order
-router.post('/orders', auth, OrderController.createOrder); //auth
-router.get('/orders/user/:userId', auth, OrderController.getOrdersByUser); //auth
-router.get('/orders/:orderId', auth, OrderController.getOrderById); //auth
-router.put('/orders/:orderId/status', OrderController.updateOrderStatus); //auth
-router.post('/orders/:orderId/products', OrderController.addProductToOrder); //teste
-router.delete('/orders/:orderId/products/:product_id', OrderController.removeProductFromOrder); //teste
-router.get('/orders', OrderController.getAllOrders); //auth
+router.post('/orders', auth, OrderController.createOrder); 
+router.get('/orders/user/', auth, OrderController.getOrdersByUser); 
+router.get('/orders/:orderId', auth, OrderController.getOrderById); 
+router.put('/orders/:orderId/status', auth, OrderController.updateOrderStatus); 
+router.post('/orders/:orderId/products', OrderController.addProductToOrder); 
+router.delete('/orders/:orderId/products/:product_id', OrderController.removeProductFromOrder); 
+router.get('/orders', auth, OrderController.getAllOrders); 
 
 // --- Rotas de CartItem ---
 router.post("/cartitem", CartItemController.createCartItem);
@@ -83,7 +82,7 @@ router.post("/product", validateProductCreateBody, ProductController.create);
 router.get("/product", ProductController.readAll);
 router.get("/product/:productId", validateProductIdParam, ProductController.readProduct);
 router.put("/product/:productId", validateProductIdParam, validateProductUpdateBody, ProductController.update);
-router.post("product/:produtoId/image", photoUpload.single("image"), ProductController.uploadImage);
+router.post("/product/:productId/image", photoUpload.single("image"), ProductController.uploadImage);
 
 // ======= Category =======
 router.post("/category", CategoryController.create);
