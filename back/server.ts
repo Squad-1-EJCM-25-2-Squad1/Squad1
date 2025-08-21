@@ -14,6 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(routes);
+app.use("/uploads", express.static('uploads'))
 
 app.get("/", (req, res) => {
   res.send("Hello World!");

@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
   output   = "../generated/prisma"
@@ -14,35 +8,42 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Gender {
+  Masculino
+  Feminino
+  Outro
+}
+
+enum DiscountType {
+  PERCENTAGE
+  FIXED
+}
+
 model User {
   id        String   @id @default(uuid())
   email     String   @unique
   firstName String
   lastName  String
   phone     String
-  gender    String   //deve ser um de "Masculino, feminino ou Outro" fazer o enum depois
+  gender    Gender
   imageSrc  String     
   createdAt DateTime @default(now())
   birthDate String
 
-  //parte do password
   hash String
   salt String
 
-  //relação 1:1
   cart       Cart?
   wishlist   Wishlist? 
-
-  //relaçoes com outras models
-  orders  Order[]
-  reviews Review[]
+  orders     Order[]
+  reviews    Review[]
 }
 
 model Product {
   id             String    @id @default(uuid())
   name           String
   description    String
-  basePrice      Decimal
+  basePrice      Decimal   @db.Decimal(10,2)
   isActive       Boolean   @default(true)
   createdAt      DateTime  @default(now())
 
@@ -52,8 +53,7 @@ model Product {
   offerId        String?
   offer          Offer?    @relation(fields: [offerId], references: [id]) 
   
-  orderProducts  OrderProduct[] // Relação com OrderProduct
-
+  orderProducts  OrderProduct[]
   images         ProductImage[]
   reviews        Review[]
   variants       Variant[]  
@@ -62,12 +62,12 @@ model Product {
 }
 
 model ProductImage {
-  id            String   @id @default(uuid())
-  imageUrl      String
-  isMain        Boolean  @default(false)
+  id        String   @id @default(uuid())
+  imageUrl  String
+  isMain    Boolean  @default(false)
 
-  productId     String
-  product       Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
 } 
 
 model Category {
@@ -76,82 +76,82 @@ model Category {
   products Product[]
 }   
 
-model Cart{
-  id            String   @id @default(uuid())
-  userId        String   @unique
-  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  items         CartItem[]
+model Cart {
+  id       String    @id @default(uuid())
+  userId   String    @unique
+  user     User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  items    CartItem[]
 }
 
 model CartItem {
-  id          String   @id @default(uuid())
-  cartId      String
-  productId   String
-  quantity    Int      @default(1)
+  id        String   @id @default(uuid())
+  cartId    String
+  productId String
+  quantity  Int      @default(1)
   
-  cart        Cart     @relation(fields: [cartId], references: [id], onDelete: Cascade)
-  product     Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  cart      Cart     @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
   
-  @@unique([cartId, productId]) // Garante que o mesmo produto não possa ser adicionado mais de uma vez no carrinho
+  @@unique([cartId, productId])
 }
 
 model Wishlist {
-  userId              String          @id 
-  user                User            @relation(fields: [userId], references: [id], onDelete: Cascade)
-  createdDate         DateTime        @default(now())
-  items               WishlistItem[]
+  userId      String    @id 
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdDate DateTime  @default(now())
+  items       WishlistItem[]
 }
 
 model WishlistItem {
-  wishlistItemId      String          @id @default(uuid())
-  wishlistId          String
-  productId           String
-  addedDate           DateTime        @default(now())
+  id         String   @id @default(uuid())
+  wishlistId String
+  productId  String
+  addedDate  DateTime @default(now())
   
-  wishlist            Wishlist        @relation(fields: [wishlistId], references: [userId])
-  product             Product         @relation(fields: [productId], references: [id])
+  wishlist   Wishlist @relation(fields: [wishlistId], references: [userId], onDelete: Cascade)
+  product    Product  @relation(fields: [productId], references: [id])
   
   @@unique([wishlistId, productId]) 
 }
 
 model Order {
-  id                  String          @id @default(uuid())
-  userId              String
-  status              String          @default("pending") // pending, shipped, delivered, cancelled
-  dateOrdered         DateTime        @default(now())
-  totalCost           Decimal         @db.Decimal(10, 2)
-  address             String
+  id            String        @id @default(uuid())
+  userId        String
+  status        String        @default("pending") // pending, shipped, delivered, cancelled
+  dateOrdered   DateTime      @default(now())
+  totalCost     Decimal       @db.Decimal(10, 2)
+  address       String
   
-  user                User            @relation(fields: [userId], references: [id])
-  orderProducts       OrderProduct[] 
+  user          User          @relation(fields: [userId], references: [id])
+  orderProducts OrderProduct[] 
 }
 
 model OrderProduct {
-  id                  String             @id @default(uuid())
-  orderId             String
-  productId           String
-  quantity            Int             @default(1)
-  unitPrice           Decimal         @db.Decimal(10, 2)
+  id         String   @id @default(uuid())
+  orderId    String
+  productId  String
+  quantity   Int      @default(1)
+  unitPrice  Decimal  @db.Decimal(10, 2)
   
-  order               Order           @relation(fields: [orderId], references: [id])
-  product             Product         @relation(fields: [productId], references: [id])
+  order      Order    @relation(fields: [orderId], references: [id])
+  product    Product  @relation(fields: [productId], references: [id])
   
   @@unique([orderId, productId])
 }
 
-model Review{
-  id           String    @id @default(uuid())
-  userId       String
-  user         User      @relation(fields: [userId], references: [id])
-  productId    String
-  product      Product   @relation(fields: [productId], references: [id])
+model Review {
+  id        String   @id @default(uuid())
+  userId    String
+  productId String
+  user      User     @relation(fields: [userId], references: [id])
+  product   Product  @relation(fields: [productId], references: [id])
 }
 
 model Variant {
-  id        String    @id @default(uuid())
-  price     Float     
-  stock     Int       
-  isActive  Boolean   
+  id        String   @id @default(uuid())
+  price     Decimal  @db.Decimal(10,2)
+  stock     Int
+  isActive  Boolean
 
   productId String    
   product   Product   @relation(fields: [productId], references: [id])
@@ -164,14 +164,14 @@ model Variant {
 }
 
 model Color {
-  id       String @id @default(uuid())
+  id       String   @id @default(uuid())
   name     String
   hexCode  String
   variants Variant[]
 }
 
 model Size {
-  id       String    @id @default(uuid())
+  id       String   @id @default(uuid())
   label    String    
   variants Variant[]
 }
@@ -181,13 +181,11 @@ model Offer {
   createdAt     DateTime  @default(now())
   name          String    
   description   String?   
-  discountType  String    
-  discountValue Decimal     
+  discountType  DiscountType
+  discountValue Decimal   @db.Decimal(10,2)
   startsAt      DateTime  
   endsAt        DateTime  
-  isActive      Boolean   
+  isActive      Boolean   @default(true)
 
-  products      Product[]  
-
-  //cartItems     CartItem[]
+  products      Product[]
 }
