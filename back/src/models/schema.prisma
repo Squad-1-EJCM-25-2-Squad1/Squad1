@@ -24,11 +24,11 @@ model User {
   email     String   @unique
   firstName String
   lastName  String
-  phone     String
-  gender    Gender
-  imageSrc  String     
+  phone     String?
+  gender    Gender?
+  imageSrc  String?     
   createdAt DateTime @default(now())
-  birthDate String
+  birthDate String?
 
   hash String
   salt String

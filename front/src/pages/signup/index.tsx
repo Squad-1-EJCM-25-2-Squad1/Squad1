@@ -73,11 +73,7 @@ export default function SignUp(){
             body: JSON.stringify({
                 firstName: data.firstName,
                 lastName: data.lastName,
-                imageSrc: "",
-                gender: "",
                 email: data.email,
-                birthDate: "",
-                phone: "",
                 password: data.password
             }),
         });
