@@ -1,100 +1,100 @@
-// prisma/seed.ts
+// prisma/seeders/ProductSeeder.ts
 import { PrismaClient, Prisma } from '../../generated/prisma';
 
-const prisma = new PrismaClient();
+export async function productSeeder(prisma: PrismaClient) {
+  // Funções auxiliares movidas para dentro do escopo da função productSeeder
+  // para evitar poluição global e garantir que PrismaClient seja passado corretamente.
+  async function ensureCategory(name: string) {
+    const found = await prisma.category.findFirst({ where: { name } });
+    if (found) return found;
+    return prisma.category.create({ data: { name } });
+  }
 
-async function ensureCategory(name: string) {
-  const found = await prisma.category.findFirst({ where: { name } });
-  if (found) return found;
-  return prisma.category.create({ data: { name } });
-}
+  async function ensureColor(name: string, hexCode: string) {
+    const found = await prisma.color.findFirst({ where: { name } });
+    if (found) return found;
+    return prisma.color.create({ data: { name, hexCode } });
+  }
 
-async function ensureColor(name: string, hexCode: string) {
-  const found = await prisma.color.findFirst({ where: { name } });
-  if (found) return found;
-  return prisma.color.create({ data: { name, hexCode } });
-}
+  async function ensureSize(label: string) {
+    const found = await prisma.size.findFirst({ where: { label } });
+    if (found) return found;
+    return prisma.size.create({ data: { label } });
+  }
 
-async function ensureSize(label: string) {
-  const found = await prisma.size.findFirst({ where: { label } });
-  if (found) return found;
-  return prisma.size.create({ data: { label } });
-}
+  async function ensureProduct(p: {
+    name: string;
+    description: string;
+    basePrice: Prisma.Decimal;
+    categoryId: string;
+    images: string[];
+  }) {
+    let product = await prisma.product.findFirst({
+      where: { name: p.name, categoryId: p.categoryId },
+    });
 
-async function ensureProduct(p: {
-  name: string;
-  description: string;
-  basePrice: Prisma.Decimal;
-  categoryId: string;
-  images: string[];
-}) {
+    if (!product) {
+      product = await prisma.product.create({
+        data: {
+          name: p.name,
+          description: p.description,
+          basePrice: p.basePrice,
+          categoryId: p.categoryId,
+        },
+      });
+    }
 
-  let product = await prisma.product.findFirst({
-    where: { name: p.name, categoryId: p.categoryId },
-  });
+    for (let i = 0; i < p.images.length; i++) {
+      const imageUrl = p.images[i];
+      const exists = await prisma.productImage.findFirst({
+        where: { productId: product.id, imageUrl },
+      });
+      if (!exists) {
+        await prisma.productImage.create({
+          data: { productId: product.id, imageUrl, isMain: i === 0 },
+        });
+      }
+    }
 
-  if (!product) {
-    product = await prisma.product.create({
+    return product;
+  }
+
+  async function ensureVariant(productId: string, colorId: string, sizeId: string, price: Prisma.Decimal) {
+    const found = await prisma.variant.findFirst({
+      where: { productId, colorId, sizeId },
+    });
+    if (found) return found;
+
+    return prisma.variant.create({
       data: {
-        name: p.name,
-        description: p.description,
-        basePrice: p.basePrice,
-        categoryId: p.categoryId,
+        productId,
+        colorId,
+        sizeId,
+        price,
+        stock: Math.floor(Math.random() * 20) + 5,
+        isActive: true,
       },
     });
   }
 
-  
-  for (let i = 0; i < p.images.length; i++) {
-    const imageUrl = p.images[i];
-    const exists = await prisma.productImage.findFirst({
-      where: { productId: product.id, imageUrl },
-    });
-    if (!exists) {
-      await prisma.productImage.create({
-        data: { productId: product.id, imageUrl, isMain: i === 0 },
-      });
+  async function ensureOffer(data: {
+    name: string;
+    description?: string | null;
+    discountType: "PERCENTAGE" | "FIXED";
+    discountValue: Prisma.Decimal;
+    startsAt: Date;
+    endsAt: Date;
+    isActive: boolean;
+  }) {
+    let offer = await prisma.offer.findFirst({ where: { name: data.name } });
+    if (!offer) {
+      offer = await prisma.offer.create({ data });
     }
+    return offer;
   }
 
-  return product;
-}
+  console.log("Iniciando seed de produtos...");
 
-async function ensureVariant(productId: string, colorId: string, sizeId: string, price: Prisma.Decimal) {
-  const found = await prisma.variant.findFirst({
-    where: { productId, colorId, sizeId },
-  });
-  if (found) return found;
-
-  return prisma.variant.create({
-    data: {
-      productId,
-      colorId,
-      sizeId,
-      price,
-      stock: Math.floor(Math.random() * 20) + 5,
-      isActive: true,
-    },
-  });
-}
-
-async function ensureOffer(data: {
-  name: string;
-  description?: string | null;
-  discountType: "PERCENTAGE" | "FIXED";
-  discountValue: Prisma.Decimal;
-  startsAt: Date;
-  endsAt: Date;
-  isActive: boolean;
-}) {
-  let offer = await prisma.offer.findFirst({ where: { name: data.name } });
-  if (!offer) {
-    offer = await prisma.offer.create({ data });
-  }
-  return offer;
-}
-
-async function main() {
   //Categorias default
   const categoriesWanted = ["Tops", "Bottoms", "Dresses", "Shoes", "Accessories"];
   const categoryMap: Record<string, string> = {};
@@ -216,7 +216,7 @@ async function main() {
     }
   }
 
-  // Ofertas e associação de produtos 
+  // Ofertas e associação de produtos
   const now = new Date();
   const in30d = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
   const in60d = new Date(now.getTime() + 60 * 24 * 60 * 60 * 1000);
@@ -241,7 +241,7 @@ async function main() {
     isActive: true,
   });
 
-  // conecta produtos às ofertas por ID 
+  // conecta produtos às ofertas por ID
   const connectByNames = async (offerId: string, productNames: string[]) => {
     const toConnect = [];
     for (const n of productNames) {
@@ -259,12 +259,5 @@ async function main() {
   await connectByNames(offer1.id, ["Camiseta Básica Branca", "Saia Midi Plissada", "Sandália Feminina"]);
   await connectByNames(offer2.id, ["Jaqueta de Couro Preta", "Calça Jeans Slim"]);
 
-  console.log("Seed concluído com sucesso!");
+  console.log("Seed de produtos concluído com sucesso!");
 }
-
-main()
-  .catch((e) => {
-    console.error("Erro no seed:", e);
-    process.exit(1);
-  })
-  .finally(async () => prisma.$disconnect());

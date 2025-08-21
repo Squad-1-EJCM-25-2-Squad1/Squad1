@@ -13,7 +13,7 @@ export default function ItemCard(props: ItemCardProps){
 
     return(
         <div className="relative flex items-center justify-center bg-gray-300 w-85 lg:w-100 xl:w-125 2xl:w-165 h-85 lg:h-100 xl:h-125 2xl:h-165">
-            <img src={props.image} alt="" className="opacity-20"/>
+            <img src={props.image} alt="" className="opacity-15 bg-gray-300"/>
             
             <span className="absolute text-white text-xs font-semibold py-1 px-3 rounded-full bg-red-600 top-4 left-4">-{props.discount}%</span>
 

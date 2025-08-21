@@ -8,7 +8,7 @@ import grid from "../../assets/sales/grid.svg";
 import list from "../../assets/sales/list.svg";
 import SaleCard from "../../components/saleCard";
 import saleProducts from "../../data/sales/saleProductsData";
-import noImage from "../../assets/home/noImage.png"
+import noImage from "../../assets/home/noImage.svg"
 import { useState } from "react";
 import whiteGrid from "../../assets/sales/whiteGrid.svg";
 import whiteList from "../../assets/sales/whiteList.svg";
@@ -57,7 +57,7 @@ export default function Sales(){
                             />
                         </div>
 
-                        <div className="flex flex-col lg:flex-row gap-8 lg:px-4 2xl:px-32">
+                        <div className="flex flex-col lg:flex-row gap-8 lg:px-16 2xl:px-32">
                             <div className="lg:w-64 flex flex-col gap-8">
                                 <div className="flex gap-2 lg:hidden text-gray-950 text-base font-semibold">
                                     <img src={filter} alt=""/>
@@ -181,26 +181,28 @@ export default function Sales(){
                                     </div>
                                 </div>
 
-                                <div className="flex flex-wrap justify-center gap-8">
-                                    {saleProducts.map((product, index) => (
-                                        <SaleCard
-                                            key={index}
-                                            infoTag={product.infoTag}
-                                            title={product.title}
-                                            image= {noImage}
-                                            categoryTag={product.categoryTag}
-                                            rating={product.rating}
-                                            numOfReviews={product.numOfReviews}
-                                            price={product.price}
-                                            oldPrice={product.oldPrice}
-                                        />
-                                    ))}
-
-                                    <button className="px-8 py-3 border border-gray-300 rounded-xl text-gray-950 text-sm font-semibold mb-8">Load More Products</button>
-                                </div>
+                                    <div className="flex flex-wrap justify-center gap-8">
+                                        {saleProducts.map((product, index) => (
+                                            <SaleCard
+                                                key={index}
+                                                infoTag={product.infoTag}
+                                                title={product.title}
+                                                image= {noImage}
+                                                categoryTag={product.categoryTag}
+                                                rating={product.rating}
+                                                numOfReviews={product.numOfReviews}
+                                                price={product.price}
+                                                oldPrice={product.oldPrice}
+                                            />
+                                        ))}
+                                    </div>
                             </div>    
                         </div>       
-                    </div>         
+                    </div>
+
+                    <div className="flex justify-center">
+                        <button className="w-50 mt-6 px-8 py-3 border border-gray-300 rounded-xl text-gray-950 text-sm font-semibold mb-8">Load More Products</button>
+                    </div>
                 </div>
 
                 <Footer

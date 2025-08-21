@@ -21,8 +21,8 @@ export async function userSeeder(prisma: PrismaClient, numUsers: number): Promis
             gender: fakerPT_BR.helpers.arrayElement(['Masculino', 'Feminino', 'Outro']),
             imageSrc: fakerPT_BR.image.avatar(),
             birthDate: formattedBirthDate,
-            hash: fakerPT_BR.string.alphanumeric(10), 
-            salt: fakerPT_BR.string.alphanumeric(10),  
+            hash: fakerPT_BR.string.alphanumeric(50), 
+            salt: fakerPT_BR.string.alphanumeric(50),  
         });
     }
 

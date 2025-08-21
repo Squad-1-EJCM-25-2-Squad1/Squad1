@@ -38,7 +38,9 @@ class OfferController {
                     startsAt: startDate,
                     endsAt: endDate,
                     isActive: isActive ?? true, // Define como true se não for fornecido
-                    products
+                    products: {
+                        connect: products.map((productId: string) => ({ id: productId }))
+                    }
                 }
             });
 
@@ -124,7 +126,9 @@ class OfferController {
                     startsAt, 
                     endsAt, 
                     isActive,
-                    products
+                    products: {
+                        set: products.map((productId: string) => ({ id: productId }))
+                    }
                 }
             });
 
