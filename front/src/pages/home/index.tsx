@@ -1,5 +1,5 @@
 import Header from "../../components/header";
-import noImage from "../../assets/home/noImage.png"
+import noImage from "../../assets/home/noImage.svg"
 import arrow from "../../assets/home/arrow.svg"
 import InfoIcons from "../../components/infoIcons";
 import shippingIcon from "../../assets/home/shippingIcon.svg"

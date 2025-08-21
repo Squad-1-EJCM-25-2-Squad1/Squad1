@@ -25,7 +25,7 @@ export default function SaleCard(props: SaleCardProps){
     return(
     <div className="flex flex-col shadow-md w-80 rounded-xl">
         <div className="relative w-full cursor-pointer">
-            <img src={props.image} alt="" className="opacity-5 bg-gray-500 rounded-t-xl"/>
+            <img src={props.image} alt="" className="opacity-15 bg-gray-500 rounded-t-xl w-80 h-80"/>
 
             <div className="absolute top-3 left-3 bg-red-600 rounded-full py-1 px-3 text-white text-xs font-semibold text-center">
                 -{percentageDiscount}%
