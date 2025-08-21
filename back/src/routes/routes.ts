@@ -5,11 +5,12 @@ import VariantController from '../controllers/VariantController';
 import ColorController from '../controllers/ColorController';
 import SizeController from '../controllers/SizeController';
 import OfferController from '../controllers/OfferController';
-import { ProductController } from '../controllers/ProductController';
+import { ProductController } from '../controllers/productController';
 import { WishlistController } from '../controllers/WishlistController';
 import { OrderController } from '../controllers/OrderController';
 import { UserController } from "../controllers/UserController";
 import { CategoryController } from "../controllers/CategoryController"; 
+import CartItemController from '../controllers/CartItemController'; 
 
 import { photoUpload } from '../config/uploader';
 
@@ -41,6 +42,13 @@ router.put('/orders/:orderId/status', OrderController.updateOrderStatus); //auth
 router.post('/orders/:orderId/products', OrderController.addProductToOrder); //teste
 router.delete('/orders/:orderId/products/:product_id', OrderController.removeProductFromOrder); //teste
 router.get('/orders', OrderController.getAllOrders); //auth
+
+// --- Rotas de CartItem ---
+router.post("/cartitem", CartItemController.createCartItem);
+router.get("/cartitem/:id", CartItemController.readCartItem);
+router.get("/cartitem", CartItemController.readAllCartItems);
+router.put("/cartitem/:id", CartItemController.updateCartItem);
+router.delete("/cartitem/:id", CartItemController.deleteCartItem);
 
 // --- Rotas de Variantes ---
 router.post("/variant", VariantController.createVariant);
