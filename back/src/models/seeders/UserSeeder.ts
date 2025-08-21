@@ -10,7 +10,7 @@ export async function userSeeder(prisma: PrismaClient, numUsers: number): Promis
     for (let i = 0; i < numUsers; i++) {
         const userId = uuidv4();
         const birthDate = fakerPT_BR.date.birthdate({ min: 18, max: 65, mode: 'age' });
-        const formattedBirthDate = birthDate.toISOString().split('T')[0].split('-').reverse().join('-'); // Formato 'DD-MM-YYYY'
+        const formattedBirthDate = birthDate.toISOString(); // Formato 'YYYY-MM-DD'
 
         usersToCreate.push({
             id: userId,
