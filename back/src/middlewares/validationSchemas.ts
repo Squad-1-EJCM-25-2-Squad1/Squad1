@@ -22,8 +22,7 @@ export const productInputSchema = z.object({
   name: z.string().min(1, 'Nome do produto é obrigatório.'),
   description: z.string().min(1, 'Descrição do produto é obrigatória.'),
   basePrice: z.number().positive('Preço base deve ser um número positivo.'),
-  //adicionar um novo validation para categoryId
-  categoryId: z.uuid('ID da categoria inválido. Deve ser um UUID válido.'),
+  categoryId: z.uuid('ID da categoria deve ser um UUID válido'),
   isActive: z.boolean().optional().default(true),
 });
 
