@@ -1,9 +1,9 @@
-import SignIn from "./pages/signin";
+import AppRoutes from "./routes/routes";
 
 function App() {
 
   return (
-    <SignIn/>
+    <AppRoutes/>
   );
 }
 
