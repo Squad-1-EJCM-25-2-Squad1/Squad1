@@ -28,7 +28,7 @@ model User {
   gender    Gender
   imageSrc  String     
   createdAt DateTime @default(now())
-  birthDate DateTime
+  birthDate String
 
   hash String
   salt String
