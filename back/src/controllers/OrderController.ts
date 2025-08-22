@@ -20,43 +20,57 @@ export class OrderController {
       if (!user) {
         return res.status(404).json({ error: 'Usuário não encontrado' });
       }
+      //carrinho com o mesmo id
+      const cart = await prisma.cart.findUnique({
+        where: { userId: userId },
+        include: { items: 
+                  {include:
+                    { product: true }
+                  }}
+      });
 
       // Calcular o custo total e validar produtos
       let totalCost = 0;
-      for (const product of products) {
+      for (const item of cart?.items || []) {
         const productData = await prisma.product.findUnique({
-          where: { id: product.productId }
+          where: { id: item.productId }
         });
         
         if (!productData) {
-          return res.status(404).json({ error: `Produto ${product.productId} não encontrado` });
+          return res.status(404).json({ error: `Produto ${item.productId} não encontrado` });
         }
         
         // Converter Decimal para Number para cálculos
         const basePrice = Number(productData.basePrice);
-        totalCost += basePrice * product.quantity;
+        totalCost += basePrice * item.quantity;
       }
 
       // Criar o pedido
       const order = await prisma.order.create({
         data: {
           userId: userId,
-          address,
+          address: address,
           totalCost: totalCost
         }
       });
 
       // Criar os produtos do pedido
-      for (const product of products) {
+      for (const item of cart?.items || []) {
         await prisma.orderProduct.create({
           data: {
             orderId: order.id,
-            productId: product.productId,
-            quantity: product.quantity,
-            unitPrice: Number(product.unitPrice || 0)
+            productId: item.productId,
+            quantity: item.quantity,
+            unitPrice: Number(item.product.basePrice)
           }
         });
       }
+      //limpar o carrinho após criar o pedido
+      await prisma.cartItem.deleteMany({
+      where: {
+        cartId: cart?.id,
+        },
+      });
 
       // Buscar o pedido completo com relacionamentos
       const completeOrder = await prisma.order.findUnique({
