@@ -15,6 +15,7 @@ import hidePassword from "../../assets/SignUp/hidePassword.svg";
 import { useState } from "react";
 import { useAuthContext } from "../../contexts/Auth.Context";
 import check from "../../assets/SignUp/check.svg";
+import { useNavigate } from "react-router-dom";
 
 const formSchema = z.object({
     firstName: z.string().nonempty("O primeiro nome é obrigatório"),
@@ -87,6 +88,8 @@ export default function SignUp(){
             console.error("Signup failed:", errorData.message);
         }
     }
+
+    const navigate = useNavigate();
 
     return(
         <div className="flex flex-col">
@@ -289,7 +292,7 @@ export default function SignUp(){
                     <div className="flex justify-center gap-1">
                         <span className="text-gray-500 text-sm font-normal">Already have an account?</span>
 
-                        <span className="text-gray-950 text-sm font-semibold cursor-pointer hover:underline">Sign in</span>
+                        <button onClick={() => navigate("/signup")} className="text-gray-950 text-sm font-semibold cursor-pointer hover:underline">Sign in</button>
                     </div>
                 </div>
 

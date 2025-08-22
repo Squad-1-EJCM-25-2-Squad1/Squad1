@@ -5,11 +5,14 @@ import carrinho from "../assets/home/carrinho.svg"
 import hamburger from "../assets/home/hamburger.svg"
 import { useState } from "react"
 import ProfileOptions from "./profileOptions"
+import { useNavigate } from "react-router-dom"
 
 export default function Header(){
     const [mobileSearch, setMobileSearch] = useState<boolean>(false);
     const [input, setInput] = useState<string>("");
     const [profileTab, setProfileTab] = useState<boolean>(false);
+
+    const navigate = useNavigate();
 
     return(
         <header className="flex flex-col">
@@ -22,7 +25,7 @@ export default function Header(){
                     <img src={hamburger} alt="" className="md:hidden cursor-pointer"/>
                 </button>
 
-                <button className="flex gap-2 items-center font-bold text-base md:text-xl cursor-pointer">
+                <button onClick={() => navigate("/")} className="flex gap-2 items-center font-bold text-base md:text-xl cursor-pointer">
                     <img src={logo} alt=""/>
                     STYLE
                 </button>
@@ -31,7 +34,7 @@ export default function Header(){
                     <button className="cursor-pointer text-lg hover:font-semibold">New In</button>
                     <button className="cursor-pointer text-lg hover:font-semibold">Women</button>
                     <button className="cursor-pointer text-lg hover:font-semibold">Men</button>
-                    <button className="cursor-pointer text-lg hover:font-semibold">Sale</button>
+                    <button onClick={() => navigate("/sales")} className="cursor-pointer text-lg hover:font-semibold">Sale</button>
                 </ul>
 
                 <div className="relative flex gap-2 md:hidden">

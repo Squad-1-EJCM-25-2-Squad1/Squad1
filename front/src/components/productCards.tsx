@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom"
 import ratingStar from "../assets/home/ratingStar.svg"
 
 interface ProductCardsProps{
@@ -7,14 +8,21 @@ interface ProductCardsProps{
     rating: number,
     numOfReviews: number,
     price: number,
-    oldPrice?: number
+    oldPrice?: number,
+    placeholder?: boolean
 }
 
 export default function ProductCards(props: ProductCardsProps){
+
+    const navigate = useNavigate();
+
     return (
-        <div className="flex flex-col shadow-md">
+        <div onClick={() => navigate("/product")} className="flex flex-col shadow-md">
             <div className="relative w-81 h-81 justify-center items-center bg-[#EAEAEA] rounded-xl cursor-pointer">
-                <img src={props.image} alt="" className="opacity-20 w-81 h-81"/>
+                {props.placeholder ? 
+                    <img src={props.image} alt="" className="opacity-20 w-81 h-81"/> :
+                    <img src={`https://images.weserv.nl/?url=${props.image}`} alt="" className="opacity-20 w-81 h-81"/>
+                }
 
                 <label className={`absolute top-3 left-3 py-2 px-3 text-gray-50 text-xs rounded-full ${props.tag === 'Sale' ? 'bg-red-500' : 'bg-black'}`}>{props.tag}</label>
             </div>

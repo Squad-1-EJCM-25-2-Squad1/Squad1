@@ -29,6 +29,7 @@ import securityIcon from "../../assets/home/securityIcon.svg";
 import RecommendationCard from "../../components/recommendationCard";
 
 export default function Product(){
+    
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
     const totalStars = 5;
