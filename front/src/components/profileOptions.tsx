@@ -27,6 +27,7 @@ export default function ProfileOptions (props: ProfileOptionsProps){
                 <ProfileOptionsIcons
                     image={profile}
                     label="Profile"
+                    userTab={true}
                 />
 
                 <ProfileOptionsIcons

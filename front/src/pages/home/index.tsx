@@ -9,8 +9,41 @@ import CategoryCards from "../../components/categoryCards";
 import ProductCards from "../../components/productCards";
 import blackArrow from "../../assets/home/blackArrow.svg"
 import Footer from "../../components/footer";
+import { useEffect, useState } from "react";
+
+interface Product {
+  id: string;
+  name: string;
+  images?: [{
+    imageUrl: string;
+  }];
+  rating?: number;
+  reviews?: any[];
+  basePrice: number;
+}
 
 export default function Home(){
+    const [products, setProducts] = useState<Product[]>([]);
+
+    const fetchProducts = async () => {
+        const response = await fetch("http://localhost:3333/product", {
+            method: "Get",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+
+        const data = await response.json(); 
+        setProducts(data);
+        
+    }
+
+    useEffect(() => {
+        fetchProducts();
+    }, []);
+
+    console.log(products);
+
     return(
         <div>
             <Header/>
@@ -101,6 +134,7 @@ export default function Home(){
                 </div>
 
                 <div className="flex flex-wrap gap-6 justify-center">
+                    {/*Placeholders para mostrar algumas funcionalidades que não foram setadas na db*/}
                     <ProductCards
                         tag= "Best Seller"
                         title= "Vintage Denim Jacket"
@@ -109,6 +143,7 @@ export default function Home(){
                         numOfReviews= {124}
                         price= {89}
                         oldPrice= {120}
+                        placeholder={true}
                     />
 
                     <ProductCards
@@ -118,6 +153,7 @@ export default function Home(){
                         rating= {4.9}
                         numOfReviews= {89}
                         price= {145}
+                        placeholder={true}
                     />
 
                     <ProductCards
@@ -128,6 +164,7 @@ export default function Home(){
                         numOfReviews= {203}
                         price= {79}
                         oldPrice= {99}
+                        placeholder={true}
                     />
 
                     <ProductCards
@@ -137,7 +174,21 @@ export default function Home(){
                         rating= {4.8}
                         numOfReviews= {156}
                         price= {125}
+                        placeholder={true}
                     />
+                    
+                    {products.map((product) => (
+                        <ProductCards
+                            key={product.id}
+                            tag="New"
+                            title={product.name}
+                            image={product.images ? product.images[0].imageUrl : noImage}
+                            rating={product.rating || 0}
+                            numOfReviews={product.reviews ? product.reviews.length : 0}
+                            price={product.basePrice}
+                        />
+                    ))}
+
                 </div>
 
                     <button className="flex justify-center gap-4 items-center w-52 h-11 text-sm text-gray-950 font-semibold rounded-lg cursor-pointer bg-white border-1 border-[#E5E7EB]">

@@ -4,6 +4,7 @@ import Product from "../pages/product";
 import Sales from "../pages/sales";
 import SignIn from "../pages/signin";
 import SignUp from "../pages/signup";
+import Me from "../pages/me";
 import { AuthContextProvider } from "../contexts/Auth.Context";
 import { RequireAuth } from "../auth/requireAuth";
 
@@ -13,8 +14,9 @@ export default function AppRoutes() {
             <AuthContextProvider>
                 <Routes>
                     <Route element={<RequireAuth/>}>
-                        <Route element={<Home/>} path="/"/>
+                        <Route element={<Me/>} path="/me"/>
                     </Route>
+                    <Route element={<Home/>} path="/"/>
                     <Route element={<Sales/>} path="/sales"/>
                     <Route element={<Product/>} path="/product"/>
                     <Route element={<SignIn/>} path="/login"/>

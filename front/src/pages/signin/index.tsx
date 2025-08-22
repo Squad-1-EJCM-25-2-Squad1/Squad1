@@ -13,6 +13,7 @@ import viewPassword from "../../assets/SignUp/viewPassword.svg";
 import hidePassword from "../../assets/SignUp/hidePassword.svg";
 import { useState } from "react";
 import { useAuthContext } from "../../contexts/Auth.Context";
+import { useNavigate } from "react-router-dom";
 
 const formSchema = z.object({
     email: z.email("Deve conter um email válido"),
@@ -42,6 +43,8 @@ export default function SignIn(){
 
         inputTypePassword === "password" ? setInputTypePassword("text") : setInputTypePassword("password");
     }
+
+    const navigate = useNavigate();
 
     return(
         <div className="flex flex-col">
@@ -143,7 +146,7 @@ export default function SignIn(){
                     <div className="flex justify-center gap-1">
                         <span className="text-gray-500 text-sm font-normal">Don't have an account?</span>
 
-                        <span className="text-gray-950 text-sm font-semibold cursor-pointer hover:underline">Sign up</span>
+                        <button onClick={() => navigate("/signup")} className="text-gray-950 text-sm font-semibold cursor-pointer hover:underline">Sign up</button>
                     </div>
                 </div>
 
