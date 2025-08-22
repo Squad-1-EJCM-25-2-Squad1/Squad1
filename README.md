@@ -6,15 +6,15 @@ Para que seja possível a execução dos arquivos deste repositório, o usuário
 
 ``` bash
 $ git clone https://github.com/Squad-1-EJCM-25-2-Squad1/StyleMarketplace.git
+$ cd StyleMarketplace
 ```
 
 ## Instalação 
-Para o correto uso do aplicativo, terão de ser feitas as instalações do expo e lemon-pie e das dependências nas pastas de back e front
+Para o correto uso do aplicativo, terão de ser feitas as instalações as dependências nas pastas de back e front
 
-### Pasta geral
+### Geral
 
 ``` bash
-$ npm install -g expo-cli
 $ npm install -g lemon-pie-cli
 ```
 
@@ -32,7 +32,7 @@ Agora, execute os comandos abaixo para instalar as dependências da pasta front
 ``` bash
 $ cd ..
 $ cd front
-$ yarn install
+$ npm install
 ```
 
 
@@ -50,6 +50,8 @@ Com os comandos abaixo, será feita a configuração da pasta `back`:
 $ cd ..
 $ cd back
 $ npm run migrate
+$ npm run seed
+$ npm run keys
 ```
 
 
