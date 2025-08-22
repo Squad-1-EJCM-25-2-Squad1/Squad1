@@ -1,0 +1,519 @@
+{
+	"info": {
+		"_postman_id": "213a94d6-4433-4b0b-b57a-e42c095efbe9",
+		"name": "Product",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47612923",
+		"_collection_link": "https://squad-1-6094.postman.co/workspace/a8f99ade-8a4e-4a69-93ba-92614fdc5c5d/collection/31102264-213a94d6-4433-4b0b-b57a-e42c095efbe9?action=share&source=collection_link&creator=47612923"
+	},
+	"item": [
+		{
+			"name": "CreateProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"name\": \"\", \r\n    \"description\": \"\", \r\n    \"basePrice\": 0,\r\n    \"categoryId\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/product",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CreateProduct",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"name\": \"Camiseta Básica\", \r\n    \"description\": \"Camiseta 100% algodão\", \r\n    \"basePrice\": 79.9,\r\n    \"categoryId\": \"fbc14293-fa94-4579-a624-d8347a11715a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/product",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "264"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"108-tUCsioZcqTGeJctUaC8OkJXea4w\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 20:11:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"b972712b-214c-461b-9046-e0200cde686d\",\n    \"name\": \"Camiseta Básica\",\n    \"description\": \"Camiseta 100% algodão\",\n    \"basePrice\": \"79.90000000000001\",\n    \"isActive\": true,\n    \"createdAt\": \"2025-08-20T20:11:17.517Z\",\n    \"categoryId\": \"fbc14293-fa94-4579-a624-d8347a11715a\",\n    \"offerId\": null\n}"
+				},
+				{
+					"name": "CreateProduct2",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"name\": \"Camiseta Básica 2\", \r\n    \"description\": \"Camiseta 100% algodão\", \r\n    \"basePrice\": 79.99,\r\n    \"categoryId\": \"fbc14293-fa94-4579-a624-d8347a11715a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/product",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "266"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"10a-xDqYyfuFiKkbo2A9IrjwBUh/NJ4\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 21:54:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"128ed9f0-25d3-422c-9d7a-dbd96312e79b\",\n    \"name\": \"Camiseta Básica 2\",\n    \"description\": \"Camiseta 100% algodão\",\n    \"basePrice\": \"79.98999999999999\",\n    \"isActive\": true,\n    \"createdAt\": \"2025-08-20T21:54:47.105Z\",\n    \"categoryId\": \"6b7d2fd0-8929-45c3-b045-8bea76aa45d2\",\n    \"offerId\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "readAllProducts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/product",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "readAllProducts",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/product",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "318"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"13e-CNWSVa1GyrOpWyOIkPgteHXp3rE\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 20:35:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"b972712b-214c-461b-9046-e0200cde686d\",\n        \"name\": \"Camiseta Básica\",\n        \"description\": \"Camiseta 100% algodão\",\n        \"basePrice\": \"79.90000000000001\",\n        \"isActive\": true,\n        \"createdAt\": \"2025-08-20T20:11:17.517Z\",\n        \"categoryId\": \"fbc14293-fa94-4579-a624-d8347a11715a\",\n        \"offerId\": null,\n        \"images\": [],\n        \"reviews\": [],\n        \"variants\": [],\n        \"offer\": null\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "readProduct",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4ZTkzM2VhMi1iYjNiLTRjOTktYjE2MS1lNDg5YmZjMmEwYTMiLCJpYXQiOjE3NTU3MjI2OTYsImV4cCI6MTc1NTcyMzI5Nn0.iW3zOdi6QomWjaE4AB8qK_zc4xKy8onn1oLioE4NRda1jK4VofPIYg0BJCHiq4Pd2jzWbYsA7nMvNhes47HxSvyuvc4S0ZTn4Vle3xX2sfegHQuyucDxDrkQgX9_pOOo9fAUqjinVDa6MeSzb0ilheQqecLJ-EK65QfCuYMch9b29FLKr2RquyowS3KyPORrdFJynhEBnehAihrMdOBw_XgkpvE4h5y9uNtch6CDt3A9jjgq4D9_wi_dgGS4qNDWrIha05AsGSY4B1eXPN0aa5oAdbJRkMJY3Qomjjp9Tq_iMSGvAczh2m__bxugnURYyY_avRrtiIzYMuG9H2qwasDX8LPs-e97TlrVEI7TpxRkDcT-P3wnZtngTGlpkcHETKhwj7lW3gKLnVSwDbWgnBQD04me8KdiDuRo3EFHEr4yaL3ff4DsMH3un9Opd0rMQsnRmy9COBpaXRkC5X1PVBeGraMmw6DoSDZtLWZhXbsBYjjhUWs4o9mGI0jyljQD-yMVsw1C--sk6ziAZwvSYIrHl200iqaEcmra3VEqisCYHRoI-yWUJNCBGm6fXR83QVJ09iUyBM6GWMoGOwFNWrTXLSWutWl2jH81Ni93jpG4r2KTI6plm2dgtUADupjrBIedBjN8rejDPILbwIbkY4o7psR_hbj5BNay-3ysNyE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/product/PRODUCTID",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"product",
+						"PRODUCTID"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "readProduct",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/product/b972712b-214c-461b-9046-e0200cde686d",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"product",
+								"b972712b-214c-461b-9046-e0200cde686d"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "316"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"13c-fjyf9LvLzm4TLNWjA/hFAYAT5F0\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 20:52:54 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"b972712b-214c-461b-9046-e0200cde686d\",\n    \"name\": \"Camiseta Básica\",\n    \"description\": \"Camiseta 100% algodão\",\n    \"basePrice\": \"79.90000000000001\",\n    \"isActive\": true,\n    \"createdAt\": \"2025-08-20T20:11:17.517Z\",\n    \"categoryId\": \"fbc14293-fa94-4579-a624-d8347a11715a\",\n    \"offerId\": null,\n    \"images\": [],\n    \"reviews\": [],\n    \"variants\": [],\n    \"offer\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"\",\r\n    \"description\": \"\",\r\n    \"basePrice\": 0,\r\n    \"categoryId\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/product/ProductID",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"product",
+						"ProductID"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"teste\",\r\n    \"description\": \"teste\",\r\n    \"basePrice\": 20,\r\n    \"categoryId\": \"11611b88-b4d9-4b71-857f-b8b7bdc36a4b\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/product/b972712b-214c-461b-9046-e0200cde686d",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"product",
+								"b972712b-214c-461b-9046-e0200cde686d"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "273"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"111-DceYnHO8tpIWj2Z45ak1RWql6Sk\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 20:54:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"b972712b-214c-461b-9046-e0200cde686d\",\n    \"name\": \"teste\",\n    \"description\": \"teste\",\n    \"basePrice\": \"20\",\n    \"isActive\": true,\n    \"createdAt\": \"2025-08-20T20:11:17.517Z\",\n    \"categoryId\": \"11611b88-b4d9-4b71-857f-b8b7bdc36a4b\",\n    \"offerId\": null,\n    \"images\": [],\n    \"reviews\": [],\n    \"variants\": [],\n    \"offer\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "uploadImage",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/TheFo/Pictures/Screenshots/Screenshot 2025-05-31 155906.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/product/b972712b-214c-461b-9046-e0200cde686d/image",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"product",
+						"b972712b-214c-461b-9046-e0200cde686d",
+						"image"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "uploadImage",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/TheFo/Pictures/Screenshots/Screenshot 2025-05-31 155906.png"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/product/b972712b-214c-461b-9046-e0200cde686d/image",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"product",
+								"b972712b-214c-461b-9046-e0200cde686d",
+								"image"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "235"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"eb-dQc9zf0xR3re8heRlW3WdQUtoe4\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 22:20:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Successfully image adding\",\n    \"image\": {\n        \"id\": \"b83f72a9-ccdb-4987-9a42-32cc569ab95d\",\n        \"imageUrl\": \"/uploads/photos/1755728453785_Screenshot 2025-05-31 155906.png\",\n        \"isMain\": false,\n        \"productId\": \"b972712b-214c-461b-9046-e0200cde686d\"\n    }\n}"
+				}
+			]
+		}
+	]
+}

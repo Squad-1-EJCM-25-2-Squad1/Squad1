@@ -1,0 +1,681 @@
+{
+	"info": {
+		"_postman_id": "a76f6379-864a-4de4-85e3-d17ba598daf3",
+		"name": "Size",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47612923",
+		"_collection_link": "https://squad-1-6094.postman.co/workspace/a8f99ade-8a4e-4a69-93ba-92614fdc5c5d/collection/47615423-a76f6379-864a-4de4-85e3-d17ba598daf3?action=share&source=collection_link&creator=47612923"
+	},
+	"item": [
+		{
+			"name": "CreateSize",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"label\": \"M\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/size",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"size"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CreateSizeM",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"label\": \"M\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/size",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"size"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "57"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"39-pXvwi2sc8zDQdgGhzwtF8ZUaGfI\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 22:40:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"af301eb4-0ac7-49b0-a62a-fc7c091a34b5\",\n    \"label\": \"M\"\n}"
+				},
+				{
+					"name": "CreateSizeP",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"label\": \"P\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/size",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"size"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "57"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"39-pxlJGKq763XxEnf8rlSBuoCH6yA\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 22:41:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"37aa9813-997d-4a2d-9346-c69adff14428\",\n    \"label\": \"P\"\n}"
+				},
+				{
+					"name": "MissingArgumentError",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/size",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"size"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"29-KJNpTTvIA04HXcOlSzZhhn1Oc/o\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 22:41:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Tamanho deve ser incluído.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "ReadSize",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"label\": \"M\"\r\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/size/af301eb4-0ac7-49b0-a62a-fc7c091a34b5",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"size",
+						"af301eb4-0ac7-49b0-a62a-fc7c091a34b5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ReadSizeM",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"label\": \"M\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/size/af301eb4-0ac7-49b0-a62a-fc7c091a34b5",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"size",
+								"af301eb4-0ac7-49b0-a62a-fc7c091a34b5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "57"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"39-pXvwi2sc8zDQdgGhzwtF8ZUaGfI\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 13:25:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"af301eb4-0ac7-49b0-a62a-fc7c091a34b5\",\n    \"label\": \"M\"\n}"
+				},
+				{
+					"name": "NotFoundError",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"label\": \"M\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/size/af301eb4-0ac7-49b0-a62a-fc7c091a34b4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"size",
+								"af301eb4-0ac7-49b0-a62a-fc7c091a34b4"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"26-HQ8FOzuW1LSIwtWlNcppvaY28Tc\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 13:26:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Tamanho não encontrado.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "ReadAllSizes",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "ReadAllSizes",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/size",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"size"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "117"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"75-Wt62EHXnr5cbKibIkQ6FLpH9Ufk\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 13:32:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"af301eb4-0ac7-49b0-a62a-fc7c091a34b5\",\n        \"label\": \"M\"\n    },\n    {\n        \"id\": \"37aa9813-997d-4a2d-9346-c69adff14428\",\n        \"label\": \"P\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "UpdateSize",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"label\": \"G\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/size/af301eb4-0ac7-49b0-a62a-fc7c091a34b5",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"size",
+						"af301eb4-0ac7-49b0-a62a-fc7c091a34b5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "UpdateSizeMtoG",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"label\": \"G\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/size/af301eb4-0ac7-49b0-a62a-fc7c091a34b5",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"size",
+								"af301eb4-0ac7-49b0-a62a-fc7c091a34b5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "57"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"39-c37fDVvE0BnnHoI9fUdyEfOgdDc\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 13:33:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"af301eb4-0ac7-49b0-a62a-fc7c091a34b5\",\n    \"label\": \"G\"\n}"
+				},
+				{
+					"name": "MissingArgumentsError",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/size/af301eb4-0ac7-49b0-a62a-fc7c091a34b5",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"size",
+								"af301eb4-0ac7-49b0-a62a-fc7c091a34b5"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "66"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"42-4DvgmcXWq49G6oK7nenwV8uS0QY\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 13:34:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"O campo label deve ser fornecido para atualização.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "DeleteSize",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"label\": \"G\"\r\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/size/af301eb4-0ac7-49b0-a62a-fc7c091a34b5",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"size",
+						"af301eb4-0ac7-49b0-a62a-fc7c091a34b5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DeleteSizeG",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"label\": \"G\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/size/af301eb4-0ac7-49b0-a62a-fc7c091a34b5",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"size",
+								"af301eb4-0ac7-49b0-a62a-fc7c091a34b5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "57"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"39-c37fDVvE0BnnHoI9fUdyEfOgdDc\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 13:35:54 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"af301eb4-0ac7-49b0-a62a-fc7c091a34b5\",\n    \"label\": \"G\"\n}"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,617 @@
+{
+	"info": {
+		"_postman_id": "fc0b2020-15c4-49c9-9537-ae9776da24b8",
+		"name": "Variants",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47612923",
+		"_collection_link": "https://squad-1-6094.postman.co/workspace/a8f99ade-8a4e-4a69-93ba-92614fdc5c5d/collection/47615423-fc0b2020-15c4-49c9-9537-ae9776da24b8?action=share&source=collection_link&creator=47612923"
+	},
+	"item": [
+		{
+			"name": "CreateVariant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"price\": 79.99,\r\n  \"stock\": 25,\r\n  \"isActive\": true,\r\n  \"productId\": \"{{productId}}\",\r\n  \"colorId\": \"{{colorId}}\",\r\n  \"sizeId\": \"{{sizeId}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/variant",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"variant"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CreateVariant",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"price\": 79.99,\r\n  \"stock\": 25,\r\n  \"isActive\": true,\r\n  \"productId\": \"{{productId}}\",\r\n  \"colorId\": \"{{colorId}}\",\r\n  \"sizeId\": \"{{sizeId}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/variant",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"variant"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "234"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ea-vKPi5xFp77wLVOribmRQVQ0MwCU\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 23:14:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"4bc072fb-fc1f-418f-9ab7-2ca23d247dbb\",\n    \"price\": 79.99,\n    \"stock\": 25,\n    \"isActive\": true,\n    \"productId\": \"128ed9f0-25d3-422c-9d7a-dbd96312e79b\",\n    \"colorId\": \"8d4a48ff-53a1-4293-bff7-5ef2f60b8895\",\n    \"sizeId\": \"af301eb4-0ac7-49b0-a62a-fc7c091a34b5\"\n}"
+				},
+				{
+					"name": "MissingArguments",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"price\": 79.99,\r\n  \"productId\": \"{{productId}}\",\r\n  \"colorId\": \"{{colorId}}\",\r\n  \"sizeId\": \"{{sizeId}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/variant",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"variant"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "118"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"76-qDUSBxAXd1phMh5qYt0iY1s2Cpo\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 23:20:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Todos os campos obrigatórios (price, stock, isActive, productId, colorId, sizeId) devem ser incluídos.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "ReadVariant",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"price\": 149.99,\r\n  \"stock\": 25,\r\n  \"isActive\": true,\r\n  \"productId\": \"{{productId}}\",\r\n  \"colorId\": \"{{colorId}}\",\r\n  \"sizeId\": \"{{sizeId}}\"\r\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/variant/4bc072fb-fc1f-418f-9ab7-2ca23d247dbb",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"variant",
+						"4bc072fb-fc1f-418f-9ab7-2ca23d247dbb"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ReadVariant",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"price\": 149.99,\r\n  \"stock\": 25,\r\n  \"isActive\": true,\r\n  \"productId\": \"{{productId}}\",\r\n  \"colorId\": \"{{colorId}}\",\r\n  \"sizeId\": \"{{sizeId}}\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/variant/4bc072fb-fc1f-418f-9ab7-2ca23d247dbb",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"variant",
+								"4bc072fb-fc1f-418f-9ab7-2ca23d247dbb"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "234"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ea-vKPi5xFp77wLVOribmRQVQ0MwCU\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 23:27:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"4bc072fb-fc1f-418f-9ab7-2ca23d247dbb\",\n    \"price\": 79.99,\n    \"stock\": 25,\n    \"isActive\": true,\n    \"productId\": \"128ed9f0-25d3-422c-9d7a-dbd96312e79b\",\n    \"colorId\": \"8d4a48ff-53a1-4293-bff7-5ef2f60b8895\",\n    \"sizeId\": \"af301eb4-0ac7-49b0-a62a-fc7c091a34b5\"\n}"
+				},
+				{
+					"name": "NotFoundError",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"price\": 149.99,\r\n  \"stock\": 25,\r\n  \"isActive\": true,\r\n  \"productId\": \"{{productId}}\",\r\n  \"colorId\": \"{{colorId}}\",\r\n  \"sizeId\": \"{{sizeId}}\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/variant/4bc072fb-fc1f-418f-9ab7-2ca23d247dba",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"variant",
+								"4bc072fb-fc1f-418f-9ab7-2ca23d247dba"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-EOuJvkj0KlQfzk6XRX1MBUrg4io\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 23:28:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Variante não encontrada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "ReadAllVariants",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "ReadAll",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/variant",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"variant"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "236"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ec-qbmoAvBJH4aMpmbfyjt+GLcWEwk\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 23:36:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"4bc072fb-fc1f-418f-9ab7-2ca23d247dbb\",\n        \"price\": 79.99,\n        \"stock\": 25,\n        \"isActive\": true,\n        \"productId\": \"128ed9f0-25d3-422c-9d7a-dbd96312e79b\",\n        \"colorId\": \"8d4a48ff-53a1-4293-bff7-5ef2f60b8895\",\n        \"sizeId\": \"af301eb4-0ac7-49b0-a62a-fc7c091a34b5\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "UpdateVariant",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"price\": 79.99,\r\n  \"stock\": 20,\r\n  \"isActive\": true,\r\n  \"productId\": \"{{productId}}\",\r\n  \"colorId\": \"{{colorId}}\",\r\n  \"sizeId\": \"{{sizeId}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/variant/4bc072fb-fc1f-418f-9ab7-2ca23d247dbb",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"variant",
+						"4bc072fb-fc1f-418f-9ab7-2ca23d247dbb"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "UpdateVariant",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"price\": 79.99,\r\n  \"stock\": 20,\r\n  \"isActive\": true,\r\n  \"productId\": \"{{productId}}\",\r\n  \"colorId\": \"{{colorId}}\",\r\n  \"sizeId\": \"{{sizeId}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/variant/4bc072fb-fc1f-418f-9ab7-2ca23d247dbb",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"variant",
+								"4bc072fb-fc1f-418f-9ab7-2ca23d247dbb"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "234"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ea-ahH5MdsmD0M2Rbs8zyqhjeeNhdk\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 23:41:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"4bc072fb-fc1f-418f-9ab7-2ca23d247dbb\",\n    \"price\": 79.99,\n    \"stock\": 20,\n    \"isActive\": true,\n    \"productId\": \"128ed9f0-25d3-422c-9d7a-dbd96312e79b\",\n    \"colorId\": \"8d4a48ff-53a1-4293-bff7-5ef2f60b8895\",\n    \"sizeId\": \"af301eb4-0ac7-49b0-a62a-fc7c091a34b5\"\n}"
+				},
+				{
+					"name": "NotFoundError",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"price\": 79.99,\r\n  \"stock\": 20,\r\n  \"isActive\": true,\r\n  \"productId\": \"{{productId}}\",\r\n  \"colorId\": \"{{colorId}}\",\r\n  \"sizeId\": \"{{sizeId}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/variant/4bc072fb-fc1f-418f-9ab7-2ca23d247dba",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"variant",
+								"4bc072fb-fc1f-418f-9ab7-2ca23d247dba"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-EOuJvkj0KlQfzk6XRX1MBUrg4io\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 23:45:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Variante não encontrada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "DeleteVariant",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"price\": 79.99,\r\n  \"stock\": 20,\r\n  \"isActive\": true,\r\n  \"productId\": \"{{productId}}\",\r\n  \"colorId\": \"{{colorId}}\",\r\n  \"sizeId\": \"{{sizeId}}\"\r\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/variant/4bc072fb-fc1f-418f-9ab7-2ca23d247dbb",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"variant",
+						"4bc072fb-fc1f-418f-9ab7-2ca23d247dbb"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DeleteVariant",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"price\": 79.99,\r\n  \"stock\": 20,\r\n  \"isActive\": true,\r\n  \"productId\": \"{{productId}}\",\r\n  \"colorId\": \"{{colorId}}\",\r\n  \"sizeId\": \"{{sizeId}}\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/variant/4bc072fb-fc1f-418f-9ab7-2ca23d247dbb",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"variant",
+								"4bc072fb-fc1f-418f-9ab7-2ca23d247dbb"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "234"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ea-ahH5MdsmD0M2Rbs8zyqhjeeNhdk\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 23:47:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"4bc072fb-fc1f-418f-9ab7-2ca23d247dbb\",\n    \"price\": 79.99,\n    \"stock\": 20,\n    \"isActive\": true,\n    \"productId\": \"128ed9f0-25d3-422c-9d7a-dbd96312e79b\",\n    \"colorId\": \"8d4a48ff-53a1-4293-bff7-5ef2f60b8895\",\n    \"sizeId\": \"af301eb4-0ac7-49b0-a62a-fc7c091a34b5\"\n}"
+				}
+			]
+		}
+	]
+}

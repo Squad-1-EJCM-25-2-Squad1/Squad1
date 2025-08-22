@@ -1,0 +1,667 @@
+{
+	"info": {
+		"_postman_id": "7590a530-1444-44a2-8b22-619afd067041",
+		"name": "User",
+		"description": "Rotas para manipulação de usuário",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47612923",
+		"_collection_link": "https://squad-1-6094.postman.co/workspace/a8f99ade-8a4e-4a69-93ba-92614fdc5c5d/collection/31102264-7590a530-1444-44a2-8b22-619afd067041?action=share&source=collection_link&creator=47612923"
+	},
+	"item": [
+		{
+			"name": "Create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Luiza\",\r\n    \"lastName\": \"Barroso\",\r\n    \"imageSrc\": \"\",\r\n    \"gender\": \"Feminino\",\r\n    \"email\": \"luiza@gmail.com\",\r\n    \"birthDate\": \"08-04-2003\",\r\n    \"phone\": \"21987543210\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/signup",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"signup"
+					]
+				},
+				"description": "Rota para criação do usuário"
+			},
+			"response": [
+				{
+					"name": "Create user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Luiza\",\r\n    \"lastName\": \"Barroso\",\r\n    \"imageSrc\": \"\",\r\n    \"gender\": \"Feminino\",\r\n    \"email\": \"luiza@gmail.com\",\r\n    \"birthDate\": \"08-04-2003\",\r\n    \"phone\": \"21987543210\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/signup",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "647"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"287-91vwc4Zabtp1bmU1twElAuozsdk\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 22:06:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"e0015a75-21bb-4f88-9291-afba1bb9e1ef\",\n    \"email\": \"luiza@gmail.com\",\n    \"firstName\": \"Luiza\",\n    \"lastName\": \"Barroso\",\n    \"phone\": \"21987543210\",\n    \"gender\": \"Feminino\",\n    \"imageSrc\": \"\",\n    \"createdAt\": \"2025-08-21T22:06:20.678Z\",\n    \"birthDate\": \"08-04-2003\",\n    \"hash\": \"e4f3e3ff51dd81d233c4592c2b50f1d1b4a2b6416aed87697695d396925ed6704588075e198b9bc7b4bd3007651922976820c1b0b2f128ecbf85527d3b099b7b\",\n    \"salt\": \"85547856f9c99c3fd14625bcc5ec26ae92142bb70c73ec8b874aa95eff6c0fb6\",\n    \"cart\": {\n        \"id\": \"fbccdf32-9055-40a4-9166-284afa2e731f\",\n        \"userId\": \"e0015a75-21bb-4f88-9291-afba1bb9e1ef\"\n    },\n    \"wishlist\": {\n        \"userId\": \"e0015a75-21bb-4f88-9291-afba1bb9e1ef\",\n        \"createdDate\": \"2025-08-21T22:06:20.678Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"luiza@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"luiza@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "867"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"363-eKgf/pTyitVxwfYtBx7MUnapROw\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 22:06:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Login completo\",\n    \"token\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlMDAxNWE3NS0yMWJiLTRmODgtOTI5MS1hZmJhMWJiOWUxZWYiLCJpYXQiOjE3NTU4MTM5OTAsImV4cCI6MTc1NTgxNDU5MH0.vtaWid_Wbq24aS6eopjXggI-uLNYNjyQhEYgWNtzqVyLGrbbW59K4hNLPWadWJpiz4skK75gd8cGHN2mwp_C8ofbPanpM_WXWJZlUqA3YQlhl_4n0TgZd8Dus4pqGedSN-WNDNObv8e2ZirR1XWKof8M2-0CjRoe2A6pux5Sfud2alGe2rT4EJGnOjwKhwhskGEFZKWSMp5jWaGGnl-wflSR02VoPh8u5YWz9sEmG9gTC-YDcPVgKQoeEt8NrQPpSQjaMHYgsKjE2dZmZwwlr7rH63HWJJOWkqRJ0pv8lMclX5o4ZUtnTxXlj4F3X3tnsyHdT24LIN1coeEtr9mmPfwahdhNGNHuzypUT1CcGZp0ympqEAZm6paBg8KaR1SzgFhMyoyuLP0zSWT4TXiaxJJ6beT4mwwf99zw0PtkAig8cqLAVrjOqJc36H_jusaGX0DWR4En3zs8zgTfcQjMfiKtsm6RKDikIusfysRoKZp6vnKojkUTyF3hTjz_cSM1DX3sirBsJqXJziumnsKmOkYT6NZG2xIloJg_vTEswZMa3CDG2Q3BfLE04CbabK0Mz-lIbjJSVGWeI8piYQoTTES0efmSFtQg8In2RAYVPWAHyQahGeCMDdXjW3QUMkRr90FIs4-UXiJVQo7QyXGMMEYbjq7MXtjwgEGmCFsgwLE\"\n}"
+				}
+			]
+		},
+		{
+			"name": "ReadUser",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/user/USERID",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"user",
+						"USERID"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ReadUser",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user/1e62cf85-20bf-4e93-8541-f98203671d3e",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"1e62cf85-20bf-4e93-8541-f98203671d3e"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "494"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1ee-11fPGqDjfoNdeBfOPREonN89oPU\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 22:06:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"1e62cf85-20bf-4e93-8541-f98203671d3e\",\n    \"email\": \"rafaela.moreira22@live.com\",\n    \"firstName\": \"Murilo\",\n    \"lastName\": \"Costa\",\n    \"phone\": \"(11) 70843-3179\",\n    \"gender\": \"Feminino\",\n    \"imageSrc\": \"https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/87.jpg\",\n    \"createdAt\": \"2025-08-21T21:34:46.702Z\",\n    \"birthDate\": \"02-05-1998\",\n    \"hash\": \"C11VpWomlf550sFrwoz96oOsCD9QFAoJ9s1OgTZ521IVS93vV6\",\n    \"salt\": \"PsLMeUERAwXW1xMVPC70HXMB0rfPbjsRU6vTKF4AYf7qtmG5aQ\",\n    \"wishlist\": null,\n    \"cart\": null,\n    \"orders\": [],\n    \"reviews\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Readme",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyNWI3ODFhYy0yM2E4LTQ5NzQtYjBiMi02Nzk5OGFjMjI1YmUiLCJpYXQiOjE3NTU2NDcwNzAsImV4cCI6MTc1NTY0NzY3MH0.X8nZhRj4-Z_yTld-HqWpX64KFylaxBlirMJFiMZ41cK-D3XSQTF9zTIOvyS496Xv8IQXxW3LZjVkxM_vjlaqtt8ffZEeRvvear2r4NkRQNY_m2sYL2QyIemUR0CJt1YCMqUAfjOgyRZ4VLbQMWsTFnkCpyaxpO58ujxpeU5rrkyU2GgQ8bt6k9_2RmU2wRdUvfv3J-w5zwLRoL_9il-gcVPdSkELCNE_tY4QpCTAds13r7XyNq5Jp6Rs0j15psLrJ1BZ69WQuPtRNPR_v-Beri-o8nNI78PYJ5oEDTEArScReMvet7vSiK09kqcXT4r0ojEcUnwXV0_SMytb1gir6YMqDgffdm4aDMvDC1lvjWp2oXarpdw3GgI1XwM2loa9rC7iI1eCpkEMpoCwedxMvopyoA_eHlg9TsNXWCIkEWCCgombz94NLQXvbWjsx6xHTndcoiyun1kzsLpKdGvx0mWPAntduQvWzJYklAOTHpZJctLE0sKAZ0N6WPukQVFFIUqrVQnpPYPwEm5pzhv27Iu8MxE1xfrPFWljD58zkoKlmmBCYn3rsh5D3ibCwFaL4frwRtd573B5cxiIJFB11SNWXwdVWVwKNEbkg_bmRYlAl2NUpKbOnZlzV5J7HM7DHCEhJBw-LsHy1Qlm8TzmlPhekoPl1bx8w39TsMHKG2o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/me",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"me"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Readme",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/me",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "672"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2a0-wTGSXu7JHZStJ8UVfZTCqP7CTYo\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 22:06:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"e0015a75-21bb-4f88-9291-afba1bb9e1ef\",\n    \"email\": \"luiza@gmail.com\",\n    \"firstName\": \"Luiza\",\n    \"lastName\": \"Barroso\",\n    \"phone\": \"21987543210\",\n    \"gender\": \"Feminino\",\n    \"imageSrc\": \"\",\n    \"createdAt\": \"2025-08-21T22:06:20.678Z\",\n    \"birthDate\": \"08-04-2003\",\n    \"hash\": \"e4f3e3ff51dd81d233c4592c2b50f1d1b4a2b6416aed87697695d396925ed6704588075e198b9bc7b4bd3007651922976820c1b0b2f128ecbf85527d3b099b7b\",\n    \"salt\": \"85547856f9c99c3fd14625bcc5ec26ae92142bb70c73ec8b874aa95eff6c0fb6\",\n    \"cart\": {\n        \"id\": \"fbccdf32-9055-40a4-9166-284afa2e731f\",\n        \"userId\": \"e0015a75-21bb-4f88-9291-afba1bb9e1ef\"\n    },\n    \"wishlist\": {\n        \"userId\": \"e0015a75-21bb-4f88-9291-afba1bb9e1ef\",\n        \"createdDate\": \"2025-08-21T22:06:20.678Z\"\n    },\n    \"orders\": [],\n    \"reviews\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "EditUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMDZhNDVhOC1mN2U4LTRmZWMtYTY1Yi05N2JmYTM1OGMzZTciLCJpYXQiOjE3NTUyNzk1NjgsImV4cCI6MTc1NTI4MDE2OH0.fcAXvUn-K1qsXTYnCUxxDpqYX6MrQFjbbuLS4NdFUVx7y6uyRi63j5l-lLF9Gkp6UoEMSGi-RjbS4KmOwdCjSEaY__FPXyZV1mQ6PJhJtCI7TiM247TjgGBkJdylaII0dzjrNPcZAMEHc7tCK27Qa_RpbJNS5NbGUV9i5SHI9zy5WGzZ8-ScFvdYYcczPDnMdSsYp_MHGSAiK1ygCrJLy0XJLsVSKGFDUpoQyLAroUh6UmoRn0dZaRQGP5EZsi-V5ZQp_gDr9cnFp7ad0uUghyBCgB-Pl_G3600jVXZna2Vx2bumOttpYxkCvRcBnx8cvK5QkAU2HZO7ogqiXfwk9QU-kXuPWhD_VpyNz2khIPM6Lp-q00nVYXGsGtozGtma3sIztTF-eNuegWLnr_8sZTHIzPvHHsgv-UcuLU5E_-8enj9Uotj5P2Vqn2MdwJVYwkrTgKIj3N8o3zydrPgtcan7ggPRhuV2C_Ij2Xkb_wVxMchcQ6iS73DUcOyw9tn7fZYPvT1NYpK4z22B7O6ullnmzHWqlLOFUIS2VEO9hxgVyROrRPVb98ZCXO5FX3-MdAQiyMv3vw1zhAMuCc87H3oolkWfj8cc7kXBqFJOq30q3W17aSoYd3CIYn14LuiSeSo8ikh8aWQs8doAM1IOmDTCMvDecnIKOs5rxGU_1rY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Exemplar\",\r\n    \"lastName\": \"Da Silva\",\r\n    \"imageSrc\": \"\",\r\n    \"gender\": \"Outro\",\r\n    \"email\": \"exemplo5@gmail.com\",\r\n    \"birthDate\": \"11-09-2011\",\r\n    \"phone\": \"2198636524\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/user/USERID",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"user",
+						"USERID"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "EditUser",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Exemplar\",\r\n    \"lastName\": \"Da Silva\",\r\n    \"imageSrc\": \"\",\r\n    \"gender\": \"Outro\",\r\n    \"email\": \"exemplo5@gmail.com\",\r\n    \"birthDate\": \"11-09-2011\",\r\n    \"phone\": \"2198636524\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user/1e62cf85-20bf-4e93-8541-f98203671d3e",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"1e62cf85-20bf-4e93-8541-f98203671d3e"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "355"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"163-mcGbWjGwPSHw/j/a8nbnGrZfNpE\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 22:07:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"1e62cf85-20bf-4e93-8541-f98203671d3e\",\n    \"email\": \"exemplo5@gmail.com\",\n    \"firstName\": \"Exemplar\",\n    \"lastName\": \"Da Silva\",\n    \"phone\": \"2198636524\",\n    \"gender\": \"Outro\",\n    \"imageSrc\": \"\",\n    \"createdAt\": \"2025-08-21T21:34:46.702Z\",\n    \"birthDate\": \"11-09-2011\",\n    \"hash\": \"C11VpWomlf550sFrwoz96oOsCD9QFAoJ9s1OgTZ521IVS93vV6\",\n    \"salt\": \"PsLMeUERAwXW1xMVPC70HXMB0rfPbjsRU6vTKF4AYf7qtmG5aQ\"\n}"
+				}
+			]
+		},
+		{
+			"name": "DeleteUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMDZhNDVhOC1mN2U4LTRmZWMtYTY1Yi05N2JmYTM1OGMzZTciLCJpYXQiOjE3NTUyNzk2OTIsImV4cCI6MTc1NTI4MDI5Mn0.3jnm7VkJmGpcxSkITUFMklGpwTkMLY0dsN0LT5ZH0zu_IBuohxiMdcUUIX5YH2iS6AhLqpXp9CdB4Gw2TaedvXBGfpT8-xAiWHtM2SfXV6XfzcZ5MODCFtvgV3lJynxEaZ2zhi9GNJbxxNqaBRKp3BXSsj0UQTJ_DaPVhY1y-6uGa78JEKa6zEYQYmVTItj33ZHru48bkN4KaDyWk67l8nBWVTQyd48vYIdjuJmIprLIJerQrehW1nEVUP57zRKtJDI2Ul2ACaY6oO_fL0KCfs1NAWrlsZCllkAg6TYYN7L-SNG6FtHfF-iTXdWBssE8MIvP8NBM9yNl9CvVrltruLXN9JhEAldF16z32R-KFD2XIs7f6LkkTHvsT5TcRF2uUFOqGzjE4k0JJ2mNVpXTNNekw4yUAG0jTcj2htSifDm0wFx1maQWWpJ9r7Zmw2YNkqV-b39wBzfARofxEO93e3xtLxhAWUyRPMte3tbf2n8wVLppzZFiJAJIOWRukG0cgDjt0WUOTDRjVJUwIMJHQJVF1hgU8B-DHTja9Ol_f0mkWnKSNCs4OVoxps-47qJ8hMiFwVJkHO2UKd5zOqIXSjuPHgHuwSRLx0o18y3P1f-pLiDuI5JjOAxY3CG8UqKbuAr3_BIZ1ShKG0i5tGi1zOJdEZI43tnOKM15fht0Whc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/user/USERID",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"user",
+						"USERID"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DeleteUser",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/user/1e62cf85-20bf-4e93-8541-f98203671d3e",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"1e62cf85-20bf-4e93-8541-f98203671d3e"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "355"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"163-mcGbWjGwPSHw/j/a8nbnGrZfNpE\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 22:08:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"1e62cf85-20bf-4e93-8541-f98203671d3e\",\n    \"email\": \"exemplo5@gmail.com\",\n    \"firstName\": \"Exemplar\",\n    \"lastName\": \"Da Silva\",\n    \"phone\": \"2198636524\",\n    \"gender\": \"Outro\",\n    \"imageSrc\": \"\",\n    \"createdAt\": \"2025-08-21T21:34:46.702Z\",\n    \"birthDate\": \"11-09-2011\",\n    \"hash\": \"C11VpWomlf550sFrwoz96oOsCD9QFAoJ9s1OgTZ521IVS93vV6\",\n    \"salt\": \"PsLMeUERAwXW1xMVPC70HXMB0rfPbjsRU6vTKF4AYf7qtmG5aQ\"\n}"
+				}
+			]
+		},
+		{
+			"name": "ReadAllUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/users",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users"
+					]
+				},
+				"description": "Rota de teste"
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2561"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a01-uPqOk+e/ddRKnMg/s1l7F90kSQg\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 22:05:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"1e62cf85-20bf-4e93-8541-f98203671d3e\",\n        \"email\": \"rafaela.moreira22@live.com\",\n        \"firstName\": \"Murilo\",\n        \"lastName\": \"Costa\",\n        \"phone\": \"(11) 70843-3179\",\n        \"gender\": \"Feminino\",\n        \"imageSrc\": \"https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/87.jpg\",\n        \"createdAt\": \"2025-08-21T21:34:46.702Z\",\n        \"birthDate\": \"02-05-1998\",\n        \"hash\": \"C11VpWomlf550sFrwoz96oOsCD9QFAoJ9s1OgTZ521IVS93vV6\",\n        \"salt\": \"PsLMeUERAwXW1xMVPC70HXMB0rfPbjsRU6vTKF4AYf7qtmG5aQ\"\n    },\n    {\n        \"id\": \"46cb6b48-694b-42c5-9b87-7b5bec96231a\",\n        \"email\": \"julio.barros37@bol.com.br\",\n        \"firstName\": \"Margarida\",\n        \"lastName\": \"Braga\",\n        \"phone\": \"(47) 1630-3417\",\n        \"gender\": \"Feminino\",\n        \"imageSrc\": \"https://avatars.githubusercontent.com/u/13376010\",\n        \"createdAt\": \"2025-08-21T21:34:46.702Z\",\n        \"birthDate\": \"14-11-1995\",\n        \"hash\": \"JRvNFNz0ykFnhUIhTLe72SQJIwbkx51mvAGGGQd5jS6U3ezw7Q\",\n        \"salt\": \"3Kl3axZgP7CTcAxzeDyzRXWGAIFXj4NXXXf9nY91o9tttAxBsq\"\n    },\n    {\n        \"id\": \"1a223390-f237-4feb-b692-55f7b31af73b\",\n        \"email\": \"isabelly5@hotmail.com\",\n        \"firstName\": \"Maria Cecília\",\n        \"lastName\": \"Costa\",\n        \"phone\": \"(14) 69359-8029\",\n        \"gender\": \"Masculino\",\n        \"imageSrc\": \"https://avatars.githubusercontent.com/u/61109187\",\n        \"createdAt\": \"2025-08-21T21:34:46.702Z\",\n        \"birthDate\": \"16-11-1982\",\n        \"hash\": \"hfKP2wO1tiqLMRXtMSmJEJxTLtscEEjgrpxR6DnJUtVvGBV3fo\",\n        \"salt\": \"PUcIxz6cWcquFvDARqdaHWpYS2x3jlG1ParwD8DvYjRXjqW7gr\"\n    },\n    {\n        \"id\": \"b6a8f225-f132-485d-a674-579f7fa3f8c5\",\n        \"email\": \"alessandra_silva@live.com\",\n        \"firstName\": \"Ana Luiza\",\n        \"lastName\": \"Moreira\",\n        \"phone\": \"(38) 58961-1759\",\n        \"gender\": \"Masculino\",\n        \"imageSrc\": \"https://avatars.githubusercontent.com/u/5626220\",\n        \"createdAt\": \"2025-08-21T21:34:46.702Z\",\n        \"birthDate\": \"19-03-1968\",\n        \"hash\": \"gsObBjKDgWpREIQ5faZQjS71JzdrM3BjqgINtJ2VYTPZZtNSzs\",\n        \"salt\": \"AHR0u4vesRqKEfA6Vk6K4yPOugW4HPuJlUw3dhrzfiUI9XjVYm\"\n    },\n    {\n        \"id\": \"f6342de1-da67-4bce-a53a-4e556e1d8dc5\",\n        \"email\": \"celia_melo@live.com\",\n        \"firstName\": \"Júlio César\",\n        \"lastName\": \"Martins\",\n        \"phone\": \"(68) 53657-4402\",\n        \"gender\": \"Feminino\",\n        \"imageSrc\": \"https://avatars.githubusercontent.com/u/74813282\",\n        \"createdAt\": \"2025-08-21T21:34:46.702Z\",\n        \"birthDate\": \"02-11-1971\",\n        \"hash\": \"UHydEVQ3hHmCynVBheO2WPW83bMS9s7dg4LOjSweVVPfNqN2Km\",\n        \"salt\": \"Gpg26huvaEjEf1Yi8TOltaF2dKgGSc1efd42iaIUDkq9tHI2V7\"\n    },\n    {\n        \"id\": \"cd833bfd-6ac3-42bb-9c61-c84fd0e0027d\",\n        \"email\": \"exemplo4@gmail.com\",\n        \"firstName\": \"Exemplo\",\n        \"lastName\": \"Da Silva\",\n        \"phone\": \"2198636524\",\n        \"gender\": \"Outro\",\n        \"imageSrc\": \"\",\n        \"createdAt\": \"2025-08-21T21:36:17.750Z\",\n        \"birthDate\": \"11-09-2002\",\n        \"hash\": \"c5b052ea9ceb1d86787d96b1e9fe99e544167bd6264b4a5990163a9a31d9ff750cf33d106c747e42527d13f98801f77bcc0255464be7fb7f7510d4c7516b46b6\",\n        \"salt\": \"b810b37392bd5b2712648d2cffa0b143d6309f1d379afde1ba4af538d3517ec8\"\n    }\n]"
+				}
+			]
+		}
+	]
+}

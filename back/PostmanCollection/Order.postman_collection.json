@@ -1,0 +1,642 @@
+{
+	"info": {
+		"_postman_id": "e9098134-1b27-4001-b137-34c74b9e5258",
+		"name": "Order",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47612923",
+		"_collection_link": "https://squad-1-6094.postman.co/workspace/a8f99ade-8a4e-4a69-93ba-92614fdc5c5d/collection/31102264-e9098134-1b27-4001-b137-34c74b9e5258?action=share&source=collection_link&creator=47612923"
+	},
+	"item": [
+		{
+			"name": "CreateOrder",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjZDgzM2JmZC02YWMzLTQyYmItOWM2MS1jODRmZDBlMDAyN2QiLCJpYXQiOjE3NTU4MTIxOTQsImV4cCI6MTc1NTgxMjc5NH0.1W_OwHFTI-zUNWCcJXGHB0uBjEVUQd9uDAzMceRF1cXNeCgQrDo5tFIqXAisKNAD7zxk3qi-DWtAD44eOJShE3kE6cdQ2zTQUsbXTwL1a6ILlWWHbMCftTPPdpHYwRNcGhDyDOwVUW6izWEcvKTuNoPQ5IOjDF92yHaqKBUwr8_Kzz127LX2jc-c7qZBcO5C2Sf_OhnWSLkn9ZwVogYJPVXfMczDBtDBQ9T1YbY8sLG8WHbl-IN6No6-AUUffrfmqX2nI1l5dk3KxUdwYk9xSn6fqbYPv8WpKqne-e5BpZmpSw_BAXh4P6VVL3KxNz7TI-_mWYcxXapWluZ3hDzSZeS_nhXAnQCeZjwQ1YKd_L8ayUCsuT4aKoB5UW2R8_SuyY4Ue0eJ_uEqSfd6ZEmVjxouI6DiVms7U8zNsgxtx3HhQ-j9CW0ZNZhzga93CxE6M30Npw7XQPW6vCUIrI5GPIyH7yxi5P15vi8I74HOVzEOfCvlxJRk4Fo4V0HgHT88A52aTrE00wZPuk1zCzS8GWzk75Ov6NCx91I5RX9iVTQF1CB8SlOqvxPJNFPfa2VE4UulZUjRBt-p96fsIbuslpSKO-hvIe_yMjdEsoJFjgMt3D6DVfBtEgeKTnKAzL2i_pJGGIWIi_OyWDO6wZv-1AHSaH4A-4b49LI6jt3qJxU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"address\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/orders",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"address\": \"Rua X\",\r\n  \"products\": [\r\n    {\r\n      \"productId\": \"b972712b-214c-461b-9046-e0200cde686d\",\r\n      \"quantity\": 2\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/orders",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1113"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"459-svrBconKs0H4SOAbu6IQrJRkr38\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 20:23:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"4f2b8ef6-a71d-466f-beb9-d77520f94f32\",\n    \"userId\": \"8e933ea2-bb3b-4c99-b161-e489bfc2a0a3\",\n    \"status\": \"pending\",\n    \"dateOrdered\": \"2025-08-20T20:23:34.724Z\",\n    \"totalCost\": \"159.8\",\n    \"address\": \"Rua X\",\n    \"user\": {\n        \"id\": \"8e933ea2-bb3b-4c99-b161-e489bfc2a0a3\",\n        \"email\": \"exemplo4@gmail.com\",\n        \"firstName\": \"Exemplo\",\n        \"lastName\": \"Da Silva\",\n        \"phone\": \"2198636524\",\n        \"gender\": \"Outro\",\n        \"imageSrc\": \"\",\n        \"createdAt\": \"2025-08-20T20:12:04.954Z\",\n        \"birthDate\": \"11-09-2002\",\n        \"hash\": \"368dd638d3df20672eac3c6422bc31f280f9079c1ad0d45bfd4663c745262d30dec969bea87596ad29b310ba76c5efe717fe7bb950df0f1b058f731ae2bf25c7\",\n        \"salt\": \"686621a54977033e3edd8cbc6677788d9b6c4cad56d23683e4921cfccd40d379\"\n    },\n    \"orderProducts\": [\n        {\n            \"id\": \"10e5d76c-61f9-4068-8e06-7a84e6c6c5b9\",\n            \"orderId\": \"4f2b8ef6-a71d-466f-beb9-d77520f94f32\",\n            \"productId\": \"b972712b-214c-461b-9046-e0200cde686d\",\n            \"quantity\": 2,\n            \"unitPrice\": \"0\",\n            \"product\": {\n                \"id\": \"b972712b-214c-461b-9046-e0200cde686d\",\n                \"name\": \"Camiseta Básica\",\n                \"description\": \"Camiseta 100% algodão\",\n                \"basePrice\": \"79.90000000000001\",\n                \"isActive\": true,\n                \"createdAt\": \"2025-08-20T20:11:17.517Z\",\n                \"categoryId\": \"fbc14293-fa94-4579-a624-d8347a11715a\",\n                \"offerId\": null\n            }\n        }\n    ]\n}"
+				},
+				{
+					"name": "CreateOrder",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"address\": \"Rua X\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/orders",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1134"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"46e-GfMfscYNx/MJtE4XOGASmHK+7LU\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 21:38:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"ce80d76d-c260-4740-835b-294617780b35\",\n    \"userId\": \"cd833bfd-6ac3-42bb-9c61-c84fd0e0027d\",\n    \"status\": \"pending\",\n    \"dateOrdered\": \"2025-08-21T21:38:40.172Z\",\n    \"totalCost\": \"699.8\",\n    \"address\": \"Rua X\",\n    \"user\": {\n        \"id\": \"cd833bfd-6ac3-42bb-9c61-c84fd0e0027d\",\n        \"email\": \"exemplo4@gmail.com\",\n        \"firstName\": \"Exemplo\",\n        \"lastName\": \"Da Silva\",\n        \"phone\": \"2198636524\",\n        \"gender\": \"Outro\",\n        \"imageSrc\": \"\",\n        \"createdAt\": \"2025-08-21T21:36:17.750Z\",\n        \"birthDate\": \"11-09-2002\",\n        \"hash\": \"c5b052ea9ceb1d86787d96b1e9fe99e544167bd6264b4a5990163a9a31d9ff750cf33d106c747e42527d13f98801f77bcc0255464be7fb7f7510d4c7516b46b6\",\n        \"salt\": \"b810b37392bd5b2712648d2cffa0b143d6309f1d379afde1ba4af538d3517ec8\"\n    },\n    \"orderProducts\": [\n        {\n            \"id\": \"d8b4046c-0c4b-43a9-83c9-975d068275ba\",\n            \"orderId\": \"ce80d76d-c260-4740-835b-294617780b35\",\n            \"productId\": \"71132764-de37-4e43-8814-79f9988cc321\",\n            \"quantity\": 2,\n            \"unitPrice\": \"349.9\",\n            \"product\": {\n                \"id\": \"71132764-de37-4e43-8814-79f9988cc321\",\n                \"name\": \"Relógio de Pulso Clássico\",\n                \"description\": \"Relógio elegante com pulseira de couro.\",\n                \"basePrice\": \"349.9\",\n                \"isActive\": true,\n                \"createdAt\": \"2025-08-21T21:34:46.767Z\",\n                \"categoryId\": \"b37de737-9e1f-4063-a994-035ed235e16b\",\n                \"offerId\": null\n            }\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "getOrdersByUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4ZTkzM2VhMi1iYjNiLTRjOTktYjE2MS1lNDg5YmZjMmEwYTMiLCJpYXQiOjE3NTU3MjE4MTAsImV4cCI6MTc1NTcyMjQxMH0.qcbopKf49vAllHbiVaB_mY8R_KGTY5ovJ4geuGcCVDwP3ownehy1oJhzdOS2Q5NB7KjGV0GLUNGYbBKS7-UOn689zCghIuWMIviuDPfWaGbU5OXt3OQ3i7WsQiMjLXmPqrsu6x2rG8o_5ErzZRJ3VneKGWkHnKkrXSvJ9Jo2nKiCu52j9MFJ9ZrncHwZz9YuJ8TtXjuQI6Ac3AcmCQYmq91GCLiIdwCB2bXWqm-HFS5U6erHbucjRbuBUeKPzy37XCeXPIcJzWcM7KNJ7N2V-CSyIALwVzL0KwieF9RarNBp6hFl3mJP7jqucN_GCWwW8MQw13DTvlOxl3UFrPa9-beAi_lXUs8G6-8gV1degXqF0N24gZn80zcv_ZvXRJxDSXOauW1eNcwaHRlfyYbVWbAW6NEY9uF1SyliTLMpMlTyxPbvDjnkbN6afF5CswZT0Egg37OexWocCAy4QFxfDFQTmqW91rbFX2HDg2boccPvNxMmFYJAJf6M5hZNv_i_hGj6HHWKAk29gZlxQd74M6lNXLStZQZaZUE8XZhaUPWx9A-__uBPT2jw53W2QNCr2-zLiRCKp5onghkJzr302dzW8tboDrbAvNbFVLSsgNYgrrjEp3TlPVdFQnAqqKY-bANW2wlm_M6VgkJDqv-gJTH4MaqxDSnJ6YJ4Sw4UofY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/orders/user/USERID",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"orders",
+						"user",
+						"USERID"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getOrdersByUser",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/orders/user/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders",
+								"user",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1774"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"6ee-SstGi6ntJ4CFENP0NiTmPRTSD4k\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 20:46:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"4f2b8ef6-a71d-466f-beb9-d77520f94f32\",\n        \"userId\": \"8e933ea2-bb3b-4c99-b161-e489bfc2a0a3\",\n        \"status\": \"shipped\",\n        \"dateOrdered\": \"2025-08-20T20:23:34.724Z\",\n        \"totalCost\": \"1000\",\n        \"address\": \"Rua X\",\n        \"orderProducts\": [\n            {\n                \"id\": \"10e5d76c-61f9-4068-8e06-7a84e6c6c5b9\",\n                \"orderId\": \"4f2b8ef6-a71d-466f-beb9-d77520f94f32\",\n                \"productId\": \"b972712b-214c-461b-9046-e0200cde686d\",\n                \"quantity\": 2,\n                \"unitPrice\": \"0\",\n                \"product\": {\n                    \"id\": \"b972712b-214c-461b-9046-e0200cde686d\",\n                    \"name\": \"Camiseta Básica\",\n                    \"description\": \"Camiseta 100% algodão\",\n                    \"basePrice\": \"79.90000000000001\",\n                    \"isActive\": true,\n                    \"createdAt\": \"2025-08-20T20:11:17.517Z\",\n                    \"categoryId\": \"fbc14293-fa94-4579-a624-d8347a11715a\",\n                    \"offerId\": null\n                }\n            },\n            {\n                \"id\": \"fbe1defd-2f52-4543-9584-a44d2ae4b637\",\n                \"orderId\": \"4f2b8ef6-a71d-466f-beb9-d77520f94f32\",\n                \"productId\": \"b850fc76-ca87-4ed4-8bc7-b549240838ef\",\n                \"quantity\": 20,\n                \"unitPrice\": \"50\",\n                \"product\": {\n                    \"id\": \"b850fc76-ca87-4ed4-8bc7-b549240838ef\",\n                    \"name\": \"Camiseta Básica 2\",\n                    \"description\": \"Camiseta 100% algodão\",\n                    \"basePrice\": \"79.90000000000001\",\n                    \"isActive\": true,\n                    \"createdAt\": \"2025-08-20T20:37:40.302Z\",\n                    \"categoryId\": \"fbc14293-fa94-4579-a624-d8347a11715a\",\n                    \"offerId\": null\n                }\n            }\n        ]\n    },\n    {\n        \"id\": \"a0f30219-022f-4c02-8493-09e17514cc22\",\n        \"userId\": \"8e933ea2-bb3b-4c99-b161-e489bfc2a0a3\",\n        \"status\": \"pending\",\n        \"dateOrdered\": \"2025-08-20T20:22:24.243Z\",\n        \"totalCost\": \"159.8\",\n        \"address\": \"Rua X\",\n        \"orderProducts\": [\n            {\n                \"id\": \"b03ed727-cc13-4c93-8b68-945e7e57c04c\",\n                \"orderId\": \"a0f30219-022f-4c02-8493-09e17514cc22\",\n                \"productId\": \"b972712b-214c-461b-9046-e0200cde686d\",\n                \"quantity\": 2,\n                \"unitPrice\": \"0\",\n                \"product\": {\n                    \"id\": \"b972712b-214c-461b-9046-e0200cde686d\",\n                    \"name\": \"Camiseta Básica\",\n                    \"description\": \"Camiseta 100% algodão\",\n                    \"basePrice\": \"79.90000000000001\",\n                    \"isActive\": true,\n                    \"createdAt\": \"2025-08-20T20:11:17.517Z\",\n                    \"categoryId\": \"fbc14293-fa94-4579-a624-d8347a11715a\",\n                    \"offerId\": null\n                }\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "getOrderById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4ZTkzM2VhMi1iYjNiLTRjOTktYjE2MS1lNDg5YmZjMmEwYTMiLCJpYXQiOjE3NTU3MjE4MTAsImV4cCI6MTc1NTcyMjQxMH0.qcbopKf49vAllHbiVaB_mY8R_KGTY5ovJ4geuGcCVDwP3ownehy1oJhzdOS2Q5NB7KjGV0GLUNGYbBKS7-UOn689zCghIuWMIviuDPfWaGbU5OXt3OQ3i7WsQiMjLXmPqrsu6x2rG8o_5ErzZRJ3VneKGWkHnKkrXSvJ9Jo2nKiCu52j9MFJ9ZrncHwZz9YuJ8TtXjuQI6Ac3AcmCQYmq91GCLiIdwCB2bXWqm-HFS5U6erHbucjRbuBUeKPzy37XCeXPIcJzWcM7KNJ7N2V-CSyIALwVzL0KwieF9RarNBp6hFl3mJP7jqucN_GCWwW8MQw13DTvlOxl3UFrPa9-beAi_lXUs8G6-8gV1degXqF0N24gZn80zcv_ZvXRJxDSXOauW1eNcwaHRlfyYbVWbAW6NEY9uF1SyliTLMpMlTyxPbvDjnkbN6afF5CswZT0Egg37OexWocCAy4QFxfDFQTmqW91rbFX2HDg2boccPvNxMmFYJAJf6M5hZNv_i_hGj6HHWKAk29gZlxQd74M6lNXLStZQZaZUE8XZhaUPWx9A-__uBPT2jw53W2QNCr2-zLiRCKp5onghkJzr302dzW8tboDrbAvNbFVLSsgNYgrrjEp3TlPVdFQnAqqKY-bANW2wlm_M6VgkJDqv-gJTH4MaqxDSnJ6YJ4Sw4UofY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/orders/ORDERID",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"orders",
+						"ORDERID"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getOrderById",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/orders/4f2b8ef6-a71d-466f-beb9-d77520f94f32",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders",
+								"4f2b8ef6-a71d-466f-beb9-d77520f94f32"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1113"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"459-svrBconKs0H4SOAbu6IQrJRkr38\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 20:32:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"4f2b8ef6-a71d-466f-beb9-d77520f94f32\",\n    \"userId\": \"8e933ea2-bb3b-4c99-b161-e489bfc2a0a3\",\n    \"status\": \"pending\",\n    \"dateOrdered\": \"2025-08-20T20:23:34.724Z\",\n    \"totalCost\": \"159.8\",\n    \"address\": \"Rua X\",\n    \"user\": {\n        \"id\": \"8e933ea2-bb3b-4c99-b161-e489bfc2a0a3\",\n        \"email\": \"exemplo4@gmail.com\",\n        \"firstName\": \"Exemplo\",\n        \"lastName\": \"Da Silva\",\n        \"phone\": \"2198636524\",\n        \"gender\": \"Outro\",\n        \"imageSrc\": \"\",\n        \"createdAt\": \"2025-08-20T20:12:04.954Z\",\n        \"birthDate\": \"11-09-2002\",\n        \"hash\": \"368dd638d3df20672eac3c6422bc31f280f9079c1ad0d45bfd4663c745262d30dec969bea87596ad29b310ba76c5efe717fe7bb950df0f1b058f731ae2bf25c7\",\n        \"salt\": \"686621a54977033e3edd8cbc6677788d9b6c4cad56d23683e4921cfccd40d379\"\n    },\n    \"orderProducts\": [\n        {\n            \"id\": \"10e5d76c-61f9-4068-8e06-7a84e6c6c5b9\",\n            \"orderId\": \"4f2b8ef6-a71d-466f-beb9-d77520f94f32\",\n            \"productId\": \"b972712b-214c-461b-9046-e0200cde686d\",\n            \"quantity\": 2,\n            \"unitPrice\": \"0\",\n            \"product\": {\n                \"id\": \"b972712b-214c-461b-9046-e0200cde686d\",\n                \"name\": \"Camiseta Básica\",\n                \"description\": \"Camiseta 100% algodão\",\n                \"basePrice\": \"79.90000000000001\",\n                \"isActive\": true,\n                \"createdAt\": \"2025-08-20T20:11:17.517Z\",\n                \"categoryId\": \"fbc14293-fa94-4579-a624-d8347a11715a\",\n                \"offerId\": null\n            }\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "updateOrderStatus",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/orders/ORDERID/status",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"orders",
+						"ORDERID",
+						"status"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "updateOrderStatus",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"shipped\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/orders/4f2b8ef6-a71d-466f-beb9-d77520f94f32/status",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders",
+								"4f2b8ef6-a71d-466f-beb9-d77520f94f32",
+								"status"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "659"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"293-KbvsSJZXUac4I6vgyBe0/pVsQO0\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 20:34:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"4f2b8ef6-a71d-466f-beb9-d77520f94f32\",\n    \"userId\": \"8e933ea2-bb3b-4c99-b161-e489bfc2a0a3\",\n    \"status\": \"shipped\",\n    \"dateOrdered\": \"2025-08-20T20:23:34.724Z\",\n    \"totalCost\": \"159.8\",\n    \"address\": \"Rua X\",\n    \"orderProducts\": [\n        {\n            \"id\": \"10e5d76c-61f9-4068-8e06-7a84e6c6c5b9\",\n            \"orderId\": \"4f2b8ef6-a71d-466f-beb9-d77520f94f32\",\n            \"productId\": \"b972712b-214c-461b-9046-e0200cde686d\",\n            \"quantity\": 2,\n            \"unitPrice\": \"0\",\n            \"product\": {\n                \"id\": \"b972712b-214c-461b-9046-e0200cde686d\",\n                \"name\": \"Camiseta Básica\",\n                \"description\": \"Camiseta 100% algodão\",\n                \"basePrice\": \"79.90000000000001\",\n                \"isActive\": true,\n                \"createdAt\": \"2025-08-20T20:11:17.517Z\",\n                \"categoryId\": \"fbc14293-fa94-4579-a624-d8347a11715a\",\n                \"offerId\": null\n            }\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "addProductToOrder",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4ZTkzM2VhMi1iYjNiLTRjOTktYjE2MS1lNDg5YmZjMmEwYTMiLCJpYXQiOjE3NTU3MjE4MTAsImV4cCI6MTc1NTcyMjQxMH0.qcbopKf49vAllHbiVaB_mY8R_KGTY5ovJ4geuGcCVDwP3ownehy1oJhzdOS2Q5NB7KjGV0GLUNGYbBKS7-UOn689zCghIuWMIviuDPfWaGbU5OXt3OQ3i7WsQiMjLXmPqrsu6x2rG8o_5ErzZRJ3VneKGWkHnKkrXSvJ9Jo2nKiCu52j9MFJ9ZrncHwZz9YuJ8TtXjuQI6Ac3AcmCQYmq91GCLiIdwCB2bXWqm-HFS5U6erHbucjRbuBUeKPzy37XCeXPIcJzWcM7KNJ7N2V-CSyIALwVzL0KwieF9RarNBp6hFl3mJP7jqucN_GCWwW8MQw13DTvlOxl3UFrPa9-beAi_lXUs8G6-8gV1degXqF0N24gZn80zcv_ZvXRJxDSXOauW1eNcwaHRlfyYbVWbAW6NEY9uF1SyliTLMpMlTyxPbvDjnkbN6afF5CswZT0Egg37OexWocCAy4QFxfDFQTmqW91rbFX2HDg2boccPvNxMmFYJAJf6M5hZNv_i_hGj6HHWKAk29gZlxQd74M6lNXLStZQZaZUE8XZhaUPWx9A-__uBPT2jw53W2QNCr2-zLiRCKp5onghkJzr302dzW8tboDrbAvNbFVLSsgNYgrrjEp3TlPVdFQnAqqKY-bANW2wlm_M6VgkJDqv-gJTH4MaqxDSnJ6YJ4Sw4UofY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\": \"\",\r\n    \"quantity\": \"\",\r\n    \"unitPrice\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/orders/ORDERID/products",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"orders",
+						"ORDERID",
+						"products"
+					]
+				},
+				"description": "TESTE"
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": \"b850fc76-ca87-4ed4-8bc7-b549240838ef\",\r\n    \"quantity\": \"20\",\r\n    \"unitPrice\": \"50\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/orders/4f2b8ef6-a71d-466f-beb9-d77520f94f32/products",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders",
+								"4f2b8ef6-a71d-466f-beb9-d77520f94f32",
+								"products"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "453"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c5-PspiruiyUdBhlTfkskZNHmSS3KA\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 20:39:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"fbe1defd-2f52-4543-9584-a44d2ae4b637\",\n    \"orderId\": \"4f2b8ef6-a71d-466f-beb9-d77520f94f32\",\n    \"productId\": \"b850fc76-ca87-4ed4-8bc7-b549240838ef\",\n    \"quantity\": 20,\n    \"unitPrice\": \"50\",\n    \"product\": {\n        \"id\": \"b850fc76-ca87-4ed4-8bc7-b549240838ef\",\n        \"name\": \"Camiseta Básica 2\",\n        \"description\": \"Camiseta 100% algodão\",\n        \"basePrice\": \"79.90000000000001\",\n        \"isActive\": true,\n        \"createdAt\": \"2025-08-20T20:37:40.302Z\",\n        \"categoryId\": \"fbc14293-fa94-4579-a624-d8347a11715a\",\n        \"offerId\": null\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "removeProductFromOrder",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/orders/ORDERID/products/PRODUCTID",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"orders",
+						"ORDERID",
+						"products",
+						"PRODUCTID"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllOrders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/orders",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getAllOrders",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/orders",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2682"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a7a-EuoMCRU7xY3WcHlljQH9C3x5DWI\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 20:51:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"4f2b8ef6-a71d-466f-beb9-d77520f94f32\",\n        \"userId\": \"8e933ea2-bb3b-4c99-b161-e489bfc2a0a3\",\n        \"status\": \"shipped\",\n        \"dateOrdered\": \"2025-08-20T20:23:34.724Z\",\n        \"totalCost\": \"1000\",\n        \"address\": \"Rua X\",\n        \"user\": {\n            \"id\": \"8e933ea2-bb3b-4c99-b161-e489bfc2a0a3\",\n            \"email\": \"exemplo4@gmail.com\",\n            \"firstName\": \"Exemplo\",\n            \"lastName\": \"Da Silva\",\n            \"phone\": \"2198636524\",\n            \"gender\": \"Outro\",\n            \"imageSrc\": \"\",\n            \"createdAt\": \"2025-08-20T20:12:04.954Z\",\n            \"birthDate\": \"11-09-2002\",\n            \"hash\": \"368dd638d3df20672eac3c6422bc31f280f9079c1ad0d45bfd4663c745262d30dec969bea87596ad29b310ba76c5efe717fe7bb950df0f1b058f731ae2bf25c7\",\n            \"salt\": \"686621a54977033e3edd8cbc6677788d9b6c4cad56d23683e4921cfccd40d379\"\n        },\n        \"orderProducts\": [\n            {\n                \"id\": \"10e5d76c-61f9-4068-8e06-7a84e6c6c5b9\",\n                \"orderId\": \"4f2b8ef6-a71d-466f-beb9-d77520f94f32\",\n                \"productId\": \"b972712b-214c-461b-9046-e0200cde686d\",\n                \"quantity\": 2,\n                \"unitPrice\": \"0\",\n                \"product\": {\n                    \"id\": \"b972712b-214c-461b-9046-e0200cde686d\",\n                    \"name\": \"Camiseta Básica\",\n                    \"description\": \"Camiseta 100% algodão\",\n                    \"basePrice\": \"79.90000000000001\",\n                    \"isActive\": true,\n                    \"createdAt\": \"2025-08-20T20:11:17.517Z\",\n                    \"categoryId\": \"fbc14293-fa94-4579-a624-d8347a11715a\",\n                    \"offerId\": null\n                }\n            },\n            {\n                \"id\": \"fbe1defd-2f52-4543-9584-a44d2ae4b637\",\n                \"orderId\": \"4f2b8ef6-a71d-466f-beb9-d77520f94f32\",\n                \"productId\": \"b850fc76-ca87-4ed4-8bc7-b549240838ef\",\n                \"quantity\": 20,\n                \"unitPrice\": \"50\",\n                \"product\": {\n                    \"id\": \"b850fc76-ca87-4ed4-8bc7-b549240838ef\",\n                    \"name\": \"Camiseta Básica 2\",\n                    \"description\": \"Camiseta 100% algodão\",\n                    \"basePrice\": \"79.90000000000001\",\n                    \"isActive\": true,\n                    \"createdAt\": \"2025-08-20T20:37:40.302Z\",\n                    \"categoryId\": \"fbc14293-fa94-4579-a624-d8347a11715a\",\n                    \"offerId\": null\n                }\n            }\n        ]\n    },\n    {\n        \"id\": \"a0f30219-022f-4c02-8493-09e17514cc22\",\n        \"userId\": \"8e933ea2-bb3b-4c99-b161-e489bfc2a0a3\",\n        \"status\": \"pending\",\n        \"dateOrdered\": \"2025-08-20T20:22:24.243Z\",\n        \"totalCost\": \"159.8\",\n        \"address\": \"Rua X\",\n        \"user\": {\n            \"id\": \"8e933ea2-bb3b-4c99-b161-e489bfc2a0a3\",\n            \"email\": \"exemplo4@gmail.com\",\n            \"firstName\": \"Exemplo\",\n            \"lastName\": \"Da Silva\",\n            \"phone\": \"2198636524\",\n            \"gender\": \"Outro\",\n            \"imageSrc\": \"\",\n            \"createdAt\": \"2025-08-20T20:12:04.954Z\",\n            \"birthDate\": \"11-09-2002\",\n            \"hash\": \"368dd638d3df20672eac3c6422bc31f280f9079c1ad0d45bfd4663c745262d30dec969bea87596ad29b310ba76c5efe717fe7bb950df0f1b058f731ae2bf25c7\",\n            \"salt\": \"686621a54977033e3edd8cbc6677788d9b6c4cad56d23683e4921cfccd40d379\"\n        },\n        \"orderProducts\": [\n            {\n                \"id\": \"b03ed727-cc13-4c93-8b68-945e7e57c04c\",\n                \"orderId\": \"a0f30219-022f-4c02-8493-09e17514cc22\",\n                \"productId\": \"b972712b-214c-461b-9046-e0200cde686d\",\n                \"quantity\": 2,\n                \"unitPrice\": \"0\",\n                \"product\": {\n                    \"id\": \"b972712b-214c-461b-9046-e0200cde686d\",\n                    \"name\": \"Camiseta Básica\",\n                    \"description\": \"Camiseta 100% algodão\",\n                    \"basePrice\": \"79.90000000000001\",\n                    \"isActive\": true,\n                    \"createdAt\": \"2025-08-20T20:11:17.517Z\",\n                    \"categoryId\": \"fbc14293-fa94-4579-a624-d8347a11715a\",\n                    \"offerId\": null\n                }\n            }\n        ]\n    }\n]"
+				}
+			]
+		}
+	]
+}
