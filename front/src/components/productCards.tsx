@@ -16,12 +16,13 @@ export default function ProductCards(props: ProductCardsProps){
 
     const navigate = useNavigate();
 
+
     return (
         <div onClick={() => navigate("/product")} className="flex flex-col shadow-md">
             <div className="relative w-81 h-81 justify-center items-center bg-[#EAEAEA] rounded-xl cursor-pointer">
                 {props.placeholder ? 
                     <img src={props.image} alt="" className="opacity-20 w-81 h-81"/> :
-                    <img src={`https://images.weserv.nl/?url=${props.image}`} alt="" className="opacity-20 w-81 h-81"/>
+                    <img src={`https://images.weserv.nl/?url=${props.image}`} alt="" className="w-81 h-81 rounded-xl"/>
                 }
 
                 <label className={`absolute top-3 left-3 py-2 px-3 text-gray-50 text-xs rounded-full ${props.tag === 'Sale' ? 'bg-red-500' : 'bg-black'}`}>{props.tag}</label>

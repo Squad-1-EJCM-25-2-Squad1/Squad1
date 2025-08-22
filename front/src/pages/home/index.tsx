@@ -14,9 +14,9 @@ import { useEffect, useState } from "react";
 interface Product {
   id: string;
   name: string;
-  images?: {
+  images?: [{
     imageUrl: string;
-  };
+  }];
   rating?: number;
   reviews?: any[];
   basePrice: number;
@@ -33,9 +33,9 @@ export default function Home(){
             },
         });
 
-        const data = await response.json();
-
+        const data = await response.json(); 
         setProducts(data);
+        
     }
 
     useEffect(() => {
@@ -182,7 +182,7 @@ export default function Home(){
                             key={product.id}
                             tag="New"
                             title={product.name}
-                            image={product.images ? product.images.imageUrl : noImage}
+                            image={product.images ? product.images[0].imageUrl : noImage}
                             rating={product.rating || 0}
                             numOfReviews={product.reviews ? product.reviews.length : 0}
                             price={product.basePrice}
