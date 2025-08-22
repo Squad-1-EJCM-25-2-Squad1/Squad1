@@ -1,0 +1,556 @@
+{
+	"info": {
+		"_postman_id": "b4d6dbf8-973e-4546-b39a-53565302c80d",
+		"name": "Offer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47612923",
+		"_collection_link": "https://squad-1-6094.postman.co/workspace/a8f99ade-8a4e-4a69-93ba-92614fdc5c5d/collection/47615423-b4d6dbf8-973e-4546-b39a-53565302c80d?action=share&source=collection_link&creator=47612923"
+	},
+	"item": [
+		{
+			"name": "CreateOffer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Oferta Black Friday\",\r\n  \"description\": \"Desconto especial para Black Friday\",\r\n  \"discountType\": \"PERCENTAGE\",\r\n  \"discountValue\": 20,\r\n  \"startsAt\": \"2024-11-25T00:00:00.000Z\",\r\n  \"endsAt\": \"2024-11-30T23:59:59.000Z\",\r\n  \"isActive\": true,\r\n  \"products\": [\"{{productId}}\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/offer",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"offer"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CreateOffer1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Oferta Black Friday\",\r\n  \"description\": \"Desconto especial para Black Friday\",\r\n  \"discountType\": \"PERCENTAGE\",\r\n  \"discountValue\": 20,\r\n  \"startsAt\": \"2024-11-25T00:00:00.000Z\",\r\n  \"endsAt\": \"2024-11-30T23:59:59.000Z\",\r\n  \"isActive\": true,\r\n  \"products\": [\"{{productId}}\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/offer",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"offer"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "304"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"130-3qgutbz0x2th8fM5pvGKigFSmYo\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 14:35:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"fc587ff0-32dc-49a1-ac96-d76de975b68a\",\n    \"createdAt\": \"2025-08-21T14:35:15.406Z\",\n    \"name\": \"Oferta Black Friday\",\n    \"description\": \"Desconto especial para Black Friday\",\n    \"discountType\": \"PERCENTAGE\",\n    \"discountValue\": \"20\",\n    \"startsAt\": \"2024-11-25T00:00:00.000Z\",\n    \"endsAt\": \"2024-11-30T23:59:59.000Z\",\n    \"isActive\": true\n}"
+				},
+				{
+					"name": "MissingArgumentsError",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/offer",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"offer"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "128"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"80-u/yJSLP9fmYztfNkQsYmoRSoAYU\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 14:55:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Nome, tipo de desconto, valor de desconto, data de início, data de fim e ID do produto são campos obrigatórios.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "ReadOffer",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseUrl}}/offer/fc587ff0-32dc-49a1-ac96-d76de975b68a",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"offer",
+						"fc587ff0-32dc-49a1-ac96-d76de975b68a"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ReadOffer1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/offer/fc587ff0-32dc-49a1-ac96-d76de975b68a",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"offer",
+								"fc587ff0-32dc-49a1-ac96-d76de975b68a"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "304"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"130-P4nFWYr9RgKVLQ/Hk5SBXzgyiL0\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 14:56:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"fc587ff0-32dc-49a1-ac96-d76de975b68a\",\n    \"createdAt\": \"2025-08-21T14:35:15.406Z\",\n    \"name\": \"Oferta Black Friday\",\n    \"description\": \"Desconto especial para Black Friday\",\n    \"discountType\": \"PERCENTAGE\",\n    \"discountValue\": \"35\",\n    \"startsAt\": \"2024-11-25T00:00:00.000Z\",\n    \"endsAt\": \"2024-11-30T23:59:59.000Z\",\n    \"isActive\": true\n}"
+				},
+				{
+					"name": "NotFoundError",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/offer/fc587ff0-32dc-49a1-ac96-d76de975b68b",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"offer",
+								"fc587ff0-32dc-49a1-ac96-d76de975b68b"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"25-9LmBBQNFoxUNXPpcDuJMMkUlOJI\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 14:57:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Oferta não encontrada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "ReadAllOffers",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "ReadAllOffers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/offer",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"offer"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "306"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"132-w+3rmY0EWdcGfoFyedxgJIjRNqc\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 14:57:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"fc587ff0-32dc-49a1-ac96-d76de975b68a\",\n        \"createdAt\": \"2025-08-21T14:35:15.406Z\",\n        \"name\": \"Oferta Black Friday\",\n        \"description\": \"Desconto especial para Black Friday\",\n        \"discountType\": \"PERCENTAGE\",\n        \"discountValue\": \"35\",\n        \"startsAt\": \"2024-11-25T00:00:00.000Z\",\n        \"endsAt\": \"2024-11-30T23:59:59.000Z\",\n        \"isActive\": true\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "UpdateOffer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Oferta Black Friday\",\r\n  \"description\": \"Desconto especial para Black Friday\",\r\n  \"discountType\": \"PERCENTAGE\",\r\n  \"discountValue\": 35,\r\n  \"startsAt\": \"2024-11-25T00:00:00.000Z\",\r\n  \"endsAt\": \"2024-11-30T23:59:59.000Z\",\r\n  \"isActive\": true,\r\n  \"products\": [\"{{productId}}\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/offer/fc587ff0-32dc-49a1-ac96-d76de975b68a",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"offer",
+						"fc587ff0-32dc-49a1-ac96-d76de975b68a"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "UpdateOffer1",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Oferta Black Friday\",\r\n  \"description\": \"Desconto especial para Black Friday\",\r\n  \"discountType\": \"PERCENTAGE\",\r\n  \"discountValue\": 35,\r\n  \"startsAt\": \"2024-11-25T00:00:00.000Z\",\r\n  \"endsAt\": \"2024-11-30T23:59:59.000Z\",\r\n  \"isActive\": true,\r\n  \"products\": [\"{{productId}}\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/offer/fc587ff0-32dc-49a1-ac96-d76de975b68a",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"offer",
+								"fc587ff0-32dc-49a1-ac96-d76de975b68a"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "304"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"130-P4nFWYr9RgKVLQ/Hk5SBXzgyiL0\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 14:54:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"fc587ff0-32dc-49a1-ac96-d76de975b68a\",\n    \"createdAt\": \"2025-08-21T14:35:15.406Z\",\n    \"name\": \"Oferta Black Friday\",\n    \"description\": \"Desconto especial para Black Friday\",\n    \"discountType\": \"PERCENTAGE\",\n    \"discountValue\": \"35\",\n    \"startsAt\": \"2024-11-25T00:00:00.000Z\",\n    \"endsAt\": \"2024-11-30T23:59:59.000Z\",\n    \"isActive\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "DeleteOffer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseUrl}}/offer/fc587ff0-32dc-49a1-ac96-d76de975b68a",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"offer",
+						"fc587ff0-32dc-49a1-ac96-d76de975b68a"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DeleteOffer1",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/offer/fc587ff0-32dc-49a1-ac96-d76de975b68a",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"offer",
+								"fc587ff0-32dc-49a1-ac96-d76de975b68a"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "304"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"130-P4nFWYr9RgKVLQ/Hk5SBXzgyiL0\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 15:00:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"fc587ff0-32dc-49a1-ac96-d76de975b68a\",\n    \"createdAt\": \"2025-08-21T14:35:15.406Z\",\n    \"name\": \"Oferta Black Friday\",\n    \"description\": \"Desconto especial para Black Friday\",\n    \"discountType\": \"PERCENTAGE\",\n    \"discountValue\": \"35\",\n    \"startsAt\": \"2024-11-25T00:00:00.000Z\",\n    \"endsAt\": \"2024-11-30T23:59:59.000Z\",\n    \"isActive\": true\n}"
+				}
+			]
+		}
+	]
+}

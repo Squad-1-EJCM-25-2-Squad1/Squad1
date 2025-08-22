@@ -1,0 +1,664 @@
+{
+	"info": {
+		"_postman_id": "799dd19e-f4d2-4f34-a910-53e22077208b",
+		"name": "Color",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47612923",
+		"_collection_link": "https://squad-1-6094.postman.co/workspace/a8f99ade-8a4e-4a69-93ba-92614fdc5c5d/collection/47615423-799dd19e-f4d2-4f34-a910-53e22077208b?action=share&source=collection_link&creator=47612923"
+	},
+	"item": [
+		{
+			"name": "CreateColor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Azul\",\r\n  \"hexCode\": \"#0000FF\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/color",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"color"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CreateColorAzul",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Azul\",\r\n  \"hexCode\": \"#0000FF\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/color",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"color"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "79"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4f-j3OizQ3HP0KCyZ3zau8TeTxAAvU\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 23:09:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"8d4a48ff-53a1-4293-bff7-5ef2f60b8895\",\n    \"name\": \"Azul\",\n    \"hexCode\": \"#0000FF\"\n}"
+				},
+				{
+					"name": "CreateColorOceanGreen",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Ocean Green\",\r\n  \"hexCode\": \"#97ebdb\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/color",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"color"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "86"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"56-SmtXegV1zIUusKUmkWBtQ7xDp0A\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 13:52:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"faa6a25b-a89c-48ff-bee9-79b40655f269\",\n    \"name\": \"Ocean Green\",\n    \"hexCode\": \"#97ebdb\"\n}"
+				},
+				{
+					"name": "MissingArgumentsError",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/color",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"color"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "51"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"33-hii7keE//7jPz40IRegO/8Hw6Ug\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 13:55:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Nome e hex code devem ser incluídos.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "ReadColor",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "ReadColorAzul",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Azul\",\r\n  \"hexCode\": \"#0000FF\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/color/8d4a48ff-53a1-4293-bff7-5ef2f60b8895",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"color",
+								"8d4a48ff-53a1-4293-bff7-5ef2f60b8895"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "79"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4f-j3OizQ3HP0KCyZ3zau8TeTxAAvU\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 13:56:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"8d4a48ff-53a1-4293-bff7-5ef2f60b8895\",\n    \"name\": \"Azul\",\n    \"hexCode\": \"#0000FF\"\n}"
+				},
+				{
+					"name": "NotFoundError",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Azul\",\r\n  \"hexCode\": \"#0000FF\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/color/8d4a48ff-53a1-4293-bff7-5ef2f60b8894",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"color",
+								"8d4a48ff-53a1-4293-bff7-5ef2f60b8894"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"22-MfAdf0pCGDgaYFqD7AkNwQHXjsk\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 13:57:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Cor não encontrada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "ReadAllColors",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "ReadAllColors",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/color",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"color"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "168"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a8-Kfb3HOTbcYJ7emtz2oqn95fkl50\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 13:58:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"8d4a48ff-53a1-4293-bff7-5ef2f60b8895\",\n        \"name\": \"Azul\",\n        \"hexCode\": \"#0000FF\"\n    },\n    {\n        \"id\": \"faa6a25b-a89c-48ff-bee9-79b40655f269\",\n        \"name\": \"Ocean Green\",\n        \"hexCode\": \"#97ebdb\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "UpdateColor",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Sky Blue\",\r\n    \"hexCode\": \"#1E90FF\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/color/8d4a48ff-53a1-4293-bff7-5ef2f60b8895",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"color",
+						"8d4a48ff-53a1-4293-bff7-5ef2f60b8895"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "UpdateColorAzul",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sky Blue\",\r\n    \"hexCode\": \"#1E90FF\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/color/8d4a48ff-53a1-4293-bff7-5ef2f60b8895",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"color",
+								"8d4a48ff-53a1-4293-bff7-5ef2f60b8895"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "83"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"53-QV/5xkPd9ie7xj97h+fDfjltAgQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 14:00:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"8d4a48ff-53a1-4293-bff7-5ef2f60b8895\",\n    \"name\": \"Sky Blue\",\n    \"hexCode\": \"#1E90FF\"\n}"
+				},
+				{
+					"name": "MissingArgumentsError",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/color/8d4a48ff-53a1-4293-bff7-5ef2f60b8895",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"color",
+								"8d4a48ff-53a1-4293-bff7-5ef2f60b8895"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "82"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"52-P/RO5sO+oyTG8cjm2OdXbuOyFFU\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 14:02:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Pelo menos um name ou hexCode deve ser fornecido para atualização.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "DeleteColor",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseUrl}}/color/8d4a48ff-53a1-4293-bff7-5ef2f60b8895",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"color",
+						"8d4a48ff-53a1-4293-bff7-5ef2f60b8895"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DeleteColor",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/color/8d4a48ff-53a1-4293-bff7-5ef2f60b8895",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"color",
+								"8d4a48ff-53a1-4293-bff7-5ef2f60b8895"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "83"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"53-QV/5xkPd9ie7xj97h+fDfjltAgQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 14:04:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"8d4a48ff-53a1-4293-bff7-5ef2f60b8895\",\n    \"name\": \"Sky Blue\",\n    \"hexCode\": \"#1E90FF\"\n}"
+				}
+			]
+		}
+	]
+}

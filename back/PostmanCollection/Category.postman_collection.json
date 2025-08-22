@@ -1,0 +1,834 @@
+{
+	"info": {
+		"_postman_id": "48250c46-01be-4741-8469-d4025297c5df",
+		"name": "Category",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47612923",
+		"_collection_link": "https://squad-1-6094.postman.co/workspace/a8f99ade-8a4e-4a69-93ba-92614fdc5c5d/collection/47629414-48250c46-01be-4741-8469-d4025297c5df?action=share&source=collection_link&creator=47612923"
+	},
+	"item": [
+		{
+			"name": "CreateCategory",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"name\": \"Teste\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/category",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"category"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"name\": \"Teste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/category/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"category",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "60"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3c-ezX4KQ/iGtS74vw36YobH83aR0w\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 20:54:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"11611b88-b4d9-4b71-857f-b8b7bdc36a4b\",\n    \"name\": \"Teste\"\n}"
+				},
+				{
+					"name": "MissingArguments",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"name\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/category",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"category"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28-hRL6uQeywAjaiBV0k7r6kHlt+Dw\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 21:55:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"The 'name' field is required\"\n}"
+				}
+			]
+		},
+		{
+			"name": "ReadCategory",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cartId\": \"\",\r\n  \"productId\": \"\",\r\n  \"quantity\": 0\r\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/category/CATEGORYID",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"category",
+						"CATEGORYID"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cartId\": \"\",\r\n  \"productId\": \"\",\r\n  \"quantity\": 0\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/category/b37de737-9e1f-4063-a994-035ed235e16b",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"category",
+								"b37de737-9e1f-4063-a994-035ed235e16b"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "632"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"278-0a0Wqrxa8492R3jz9fu+MpMz1RI\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 21:59:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"b37de737-9e1f-4063-a994-035ed235e16b\",\n    \"name\": \"Accessories\",\n    \"products\": [\n        {\n            \"id\": \"71132764-de37-4e43-8814-79f9988cc321\",\n            \"name\": \"Relógio de Pulso Clássico\",\n            \"description\": \"Relógio elegante com pulseira de couro.\",\n            \"basePrice\": \"349.9\",\n            \"isActive\": true,\n            \"createdAt\": \"2025-08-21T21:34:46.767Z\",\n            \"categoryId\": \"b37de737-9e1f-4063-a994-035ed235e16b\",\n            \"offerId\": null\n        },\n        {\n            \"id\": \"b934c02a-61a4-4990-8d97-019b54b16cc7\",\n            \"name\": \"Bolsa de Couro Marrom\",\n            \"description\": \"Bolsa clássica em couro legítimo.\",\n            \"basePrice\": \"399.9\",\n            \"isActive\": true,\n            \"createdAt\": \"2025-08-21T21:34:46.803Z\",\n            \"categoryId\": \"b37de737-9e1f-4063-a994-035ed235e16b\",\n            \"offerId\": null\n        }\n    ]\n}"
+				},
+				{
+					"name": "NotFound",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cartId\": \"\",\r\n  \"productId\": \"\",\r\n  \"quantity\": 0\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/category/CATEGORYID",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"category",
+								"CATEGORYID"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1e-Ta6oFgL4P9HHP+qTwC63BfL5WQQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 21:55:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Category not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "ReadAllCategories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/category",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"category"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/category",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"category"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "3347"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d13-i8zMIWDyEfy7RiCI1kdOO+JYuXY\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 21:51:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"b37de737-9e1f-4063-a994-035ed235e16b\",\n        \"name\": \"Accessories\",\n        \"products\": [\n            {\n                \"id\": \"71132764-de37-4e43-8814-79f9988cc321\",\n                \"name\": \"Relógio de Pulso Clássico\",\n                \"description\": \"Relógio elegante com pulseira de couro.\",\n                \"basePrice\": \"349.9\",\n                \"isActive\": true,\n                \"createdAt\": \"2025-08-21T21:34:46.767Z\",\n                \"categoryId\": \"b37de737-9e1f-4063-a994-035ed235e16b\",\n                \"offerId\": null\n            },\n            {\n                \"id\": \"b934c02a-61a4-4990-8d97-019b54b16cc7\",\n                \"name\": \"Bolsa de Couro Marrom\",\n                \"description\": \"Bolsa clássica em couro legítimo.\",\n                \"basePrice\": \"399.9\",\n                \"isActive\": true,\n                \"createdAt\": \"2025-08-21T21:34:46.803Z\",\n                \"categoryId\": \"b37de737-9e1f-4063-a994-035ed235e16b\",\n                \"offerId\": null\n            }\n        ]\n    },\n    {\n        \"id\": \"171774e1-861f-4508-8548-e1b0ed27112d\",\n        \"name\": \"Bottoms\",\n        \"products\": [\n            {\n                \"id\": \"e447ad31-3b23-4ceb-be84-a106a76da438\",\n                \"name\": \"Saia Midi Plissada\",\n                \"description\": \"Saia moderna e elegante para ocasiões especiais.\",\n                \"basePrice\": \"179.9\",\n                \"isActive\": true,\n                \"createdAt\": \"2025-08-21T21:34:46.784Z\",\n                \"categoryId\": \"171774e1-861f-4508-8548-e1b0ed27112d\",\n                \"offerId\": \"1597e92a-e890-4d9b-b6b7-36f8db696b13\"\n            },\n            {\n                \"id\": \"77844956-021c-4f94-812a-d8279e2d550a\",\n                \"name\": \"Calça Jeans Slim\",\n                \"description\": \"Calça jeans azul escuro, corte slim fit.\",\n                \"basePrice\": \"149.9\",\n                \"isActive\": true,\n                \"createdAt\": \"2025-08-21T21:34:46.740Z\",\n                \"categoryId\": \"171774e1-861f-4508-8548-e1b0ed27112d\",\n                \"offerId\": \"a85c7e97-4a82-42e9-9d42-93a93a9d7744\"\n            }\n        ]\n    },\n    {\n        \"id\": \"3191c4c1-7402-47d5-b1f0-312e2ef7b2ee\",\n        \"name\": \"Dresses\",\n        \"products\": [\n            {\n                \"id\": \"ee3b4ec5-8134-4fcc-8d20-ac311a41fbe9\",\n                \"name\": \"Vestido Floral Verão\",\n                \"description\": \"Vestido leve com estampa floral, perfeito para dias quentes.\",\n                \"basePrice\": \"199.9\",\n                \"isActive\": true,\n                \"createdAt\": \"2025-08-21T21:34:46.749Z\",\n                \"categoryId\": \"3191c4c1-7402-47d5-b1f0-312e2ef7b2ee\",\n                \"offerId\": null\n            },\n            {\n                \"id\": \"95e8a669-23d9-4b1c-8bfd-52da2561db03\",\n                \"name\": \"Vestido de Festa Longo\",\n                \"description\": \"Vestido sofisticado para eventos noturnos.\",\n                \"basePrice\": \"599.9\",\n                \"isActive\": true,\n                \"createdAt\": \"2025-08-21T21:34:46.811Z\",\n                \"categoryId\": \"3191c4c1-7402-47d5-b1f0-312e2ef7b2ee\",\n                \"offerId\": null\n            }\n        ]\n    },\n    {\n        \"id\": \"597f0af6-9c88-4eae-862e-33cb09481415\",\n        \"name\": \"Shoes\",\n        \"products\": [\n            {\n                \"id\": \"b1768688-d5bf-43cc-9a2d-866d9bbfd98a\",\n                \"name\": \"Tênis Casual Branco\",\n                \"description\": \"Tênis confortável e versátil, ideal para o dia a dia.\",\n                \"basePrice\": \"229.9\",\n                \"isActive\": true,\n                \"createdAt\": \"2025-08-21T21:34:46.759Z\",\n                \"categoryId\": \"597f0af6-9c88-4eae-862e-33cb09481415\",\n                \"offerId\": null\n            },\n            {\n                \"id\": \"af1137c9-19e2-480b-a84b-327153584cae\",\n                \"name\": \"Sandália Feminina\",\n                \"description\": \"Sandália aberta com salto médio.\",\n                \"basePrice\": \"139.9\",\n                \"isActive\": true,\n                \"createdAt\": \"2025-08-21T21:34:46.793Z\",\n                \"categoryId\": \"597f0af6-9c88-4eae-862e-33cb09481415\",\n                \"offerId\": \"1597e92a-e890-4d9b-b6b7-36f8db696b13\"\n            }\n        ]\n    },\n    {\n        \"id\": \"bb936295-d094-4e46-9ed1-ccc618f556f3\",\n        \"name\": \"Tops\",\n        \"products\": [\n            {\n                \"id\": \"eccffb0f-ab67-4abd-bb42-04802e179fc8\",\n                \"name\": \"Camiseta Básica Branca\",\n                \"description\": \"Camiseta de algodão 100% confortável e leve.\",\n                \"basePrice\": \"49.9\",\n                \"isActive\": true,\n                \"createdAt\": \"2025-08-21T21:34:46.725Z\",\n                \"categoryId\": \"bb936295-d094-4e46-9ed1-ccc618f556f3\",\n                \"offerId\": \"1597e92a-e890-4d9b-b6b7-36f8db696b13\"\n            },\n            {\n                \"id\": \"82ae6601-6fea-4da4-a6b8-9e6012b101dc\",\n                \"name\": \"Jaqueta de Couro Preta\",\n                \"description\": \"Jaqueta estilosa de couro legítimo.\",\n                \"basePrice\": \"499.9\",\n                \"isActive\": true,\n                \"createdAt\": \"2025-08-21T21:34:46.776Z\",\n                \"categoryId\": \"bb936295-d094-4e46-9ed1-ccc618f556f3\",\n                \"offerId\": \"a85c7e97-4a82-42e9-9d42-93a93a9d7744\"\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "UpdateCategory",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"name\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/category/CATEGORYID",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"category",
+						"CATEGORYID"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"name\": \"Teste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/category/3a77a2de-ce78-482c-9e66-b6b729742f5d",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"category",
+								"3a77a2de-ce78-482c-9e66-b6b729742f5d"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "60"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3c-425pnT6+GNPDK9VX1b869wJ1xPo\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 21:54:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"3a77a2de-ce78-482c-9e66-b6b729742f5d\",\n    \"name\": \"Teste\"\n}"
+				},
+				{
+					"name": "NotFound",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"name\": \"Teste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/category/3a77a2de-ce78-482c-9e66-b6b729742f5",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"category",
+								"3a77a2de-ce78-482c-9e66-b6b729742f5"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1e-Ta6oFgL4P9HHP+qTwC63BfL5WQQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 21:56:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Category not found\"\n}"
+				},
+				{
+					"name": "MissingArguments",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/category/3a77a2de-ce78-482c-9e66-b6b729742f5",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"category",
+								"3a77a2de-ce78-482c-9e66-b6b729742f5"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28-hRL6uQeywAjaiBV0k7r6kHlt+Dw\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 21:56:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"The 'name' field is required\"\n}"
+				}
+			]
+		},
+		{
+			"name": "DeleteCategory",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/category/CATEGORYID",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"category",
+						"CATEGORYID"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/category/740272ac-3b04-4644-968e-60bcdcc1651c",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"category",
+								"740272ac-3b04-4644-968e-60bcdcc1651c"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "43"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2b-oSB9C9UJoaUkZ5Mu5gkTHkZwuV4\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 21:52:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Category deleted successfully\"\n}"
+				},
+				{
+					"name": "NotFound",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/category/CATEGORYID",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"category",
+								"CATEGORYID"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1e-Ta6oFgL4P9HHP+qTwC63BfL5WQQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 22:01:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Category not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "PopulateDefaults",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/category/populate",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"category",
+						"populate"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/category/populate",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"category",
+								"populate"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "55"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"37-7fIRxgx6JYuQvxyLZqNYn9UigTQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 21:51:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Default categories populated successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "getProductsByCategories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/category/products/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"category",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,618 @@
+{
+	"info": {
+		"_postman_id": "c0ce1e83-9ac7-4060-a8b1-492ac0a7f8c8",
+		"name": "CartItem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47612923",
+		"_collection_link": "https://squad-1-6094.postman.co/workspace/a8f99ade-8a4e-4a69-93ba-92614fdc5c5d/collection/31102264-c0ce1e83-9ac7-4060-a8b1-492ac0a7f8c8?action=share&source=collection_link&creator=47612923"
+	},
+	"item": [
+		{
+			"name": "CreateCartItem",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cartId\": \"\",\r\n  \"productId\": \"\",\r\n  \"quantity\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/cartitem",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"cartitem"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CreateCartItem1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cartId\": \"0fec99bb-7515-4a7c-8a32-921294cd352e\",\r\n  \"productId\": \"128ed9f0-25d3-422c-9d7a-dbd96312e79b\",\r\n  \"quantity\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cartitem",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cartitem"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "535"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"217-QGNXu8+lNyQGpgxrew/eWkXz3H8\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Aug 2025 22:00:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"e6d11609-4b99-4406-9dbf-573d72420d2b\",\n    \"cartId\": \"0fec99bb-7515-4a7c-8a32-921294cd352e\",\n    \"productId\": \"128ed9f0-25d3-422c-9d7a-dbd96312e79b\",\n    \"quantity\": 2,\n    \"cart\": {\n        \"id\": \"0fec99bb-7515-4a7c-8a32-921294cd352e\",\n        \"userId\": \"40085689-90d1-4c36-8436-b67751f41bfa\"\n    },\n    \"product\": {\n        \"id\": \"128ed9f0-25d3-422c-9d7a-dbd96312e79b\",\n        \"name\": \"Camiseta Básica 2\",\n        \"description\": \"Camiseta 100% algodão\",\n        \"basePrice\": \"79.98999999999999\",\n        \"isActive\": true,\n        \"createdAt\": \"2025-08-20T21:54:47.105Z\",\n        \"categoryId\": \"6b7d2fd0-8929-45c3-b045-8bea76aa45d2\",\n        \"offerId\": null\n    }\n}"
+				},
+				{
+					"name": "MissingArgumentsError",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cartitem",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cartitem"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "56"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"38-M8NKGkYKEsDvJ4Bk2XqV3u7D8sI\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 14:06:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Cart ID e Product ID devem ser incluídos.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "ReadCartItem",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cartId\": \"0fec99bb-7515-4a7c-8a32-921294cd352e\",\r\n  \"productId\": \"128ed9f0-25d3-422c-9d7a-dbd96312e79b\",\r\n  \"quantity\": 2\r\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/cartitem/e6d11609-4b99-4406-9dbf-573d72420d2b",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"cartitem",
+						"e6d11609-4b99-4406-9dbf-573d72420d2b"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ReadCartItem1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cartId\": \"0fec99bb-7515-4a7c-8a32-921294cd352e\",\r\n  \"productId\": \"128ed9f0-25d3-422c-9d7a-dbd96312e79b\",\r\n  \"quantity\": 2\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cartitem/e6d11609-4b99-4406-9dbf-573d72420d2b",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cartitem",
+								"e6d11609-4b99-4406-9dbf-573d72420d2b"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "535"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"217-QGNXu8+lNyQGpgxrew/eWkXz3H8\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 14:07:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"e6d11609-4b99-4406-9dbf-573d72420d2b\",\n    \"cartId\": \"0fec99bb-7515-4a7c-8a32-921294cd352e\",\n    \"productId\": \"128ed9f0-25d3-422c-9d7a-dbd96312e79b\",\n    \"quantity\": 2,\n    \"cart\": {\n        \"id\": \"0fec99bb-7515-4a7c-8a32-921294cd352e\",\n        \"userId\": \"40085689-90d1-4c36-8436-b67751f41bfa\"\n    },\n    \"product\": {\n        \"id\": \"128ed9f0-25d3-422c-9d7a-dbd96312e79b\",\n        \"name\": \"Camiseta Básica 2\",\n        \"description\": \"Camiseta 100% algodão\",\n        \"basePrice\": \"79.98999999999999\",\n        \"isActive\": true,\n        \"createdAt\": \"2025-08-20T21:54:47.105Z\",\n        \"categoryId\": \"6b7d2fd0-8929-45c3-b045-8bea76aa45d2\",\n        \"offerId\": null\n    }\n}"
+				},
+				{
+					"name": "NotFoundError",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cartId\": \"0fec99bb-7515-4a7c-8a32-921294cd352e\",\r\n  \"productId\": \"128ed9f0-25d3-422c-9d7a-dbd96312e79b\",\r\n  \"quantity\": 2\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cartitem/e6d11609-4b99-4406-9dbf-573d72420d2a",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cartitem",
+								"e6d11609-4b99-4406-9dbf-573d72420d2a"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "47"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2f-sXtkXkZhmV3MLZ9Sw0GhjG3pD4Q\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 14:08:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Item do carrinho não encontrado.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "ReadAllCartItems",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "ReadAllCartItems",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/cartitem/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cartitem",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "537"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"219-U90r5R3D1/hocHDkklkWOpRDSSw\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 14:09:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"e6d11609-4b99-4406-9dbf-573d72420d2b\",\n        \"cartId\": \"0fec99bb-7515-4a7c-8a32-921294cd352e\",\n        \"productId\": \"128ed9f0-25d3-422c-9d7a-dbd96312e79b\",\n        \"quantity\": 2,\n        \"cart\": {\n            \"id\": \"0fec99bb-7515-4a7c-8a32-921294cd352e\",\n            \"userId\": \"40085689-90d1-4c36-8436-b67751f41bfa\"\n        },\n        \"product\": {\n            \"id\": \"128ed9f0-25d3-422c-9d7a-dbd96312e79b\",\n            \"name\": \"Camiseta Básica 2\",\n            \"description\": \"Camiseta 100% algodão\",\n            \"basePrice\": \"79.98999999999999\",\n            \"isActive\": true,\n            \"createdAt\": \"2025-08-20T21:54:47.105Z\",\n            \"categoryId\": \"6b7d2fd0-8929-45c3-b045-8bea76aa45d2\",\n            \"offerId\": null\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "UpdateCartItem",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cartId\": \"0fec99bb-7515-4a7c-8a32-921294cd352e\",\r\n  \"productId\": \"128ed9f0-25d3-422c-9d7a-dbd96312e79b\",\r\n  \"quantity\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/cartitem/e6d11609-4b99-4406-9dbf-573d72420d2b",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"cartitem",
+						"e6d11609-4b99-4406-9dbf-573d72420d2b"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "UpdateCartItem",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cartId\": \"0fec99bb-7515-4a7c-8a32-921294cd352e\",\r\n  \"productId\": \"128ed9f0-25d3-422c-9d7a-dbd96312e79b\",\r\n  \"quantity\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cartitem/e6d11609-4b99-4406-9dbf-573d72420d2b",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cartitem",
+								"e6d11609-4b99-4406-9dbf-573d72420d2b"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "535"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"217-Qxj9HzvpkorawZ//lfo9My4hisw\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 14:12:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"e6d11609-4b99-4406-9dbf-573d72420d2b\",\n    \"cartId\": \"0fec99bb-7515-4a7c-8a32-921294cd352e\",\n    \"productId\": \"128ed9f0-25d3-422c-9d7a-dbd96312e79b\",\n    \"quantity\": 4,\n    \"cart\": {\n        \"id\": \"0fec99bb-7515-4a7c-8a32-921294cd352e\",\n        \"userId\": \"40085689-90d1-4c36-8436-b67751f41bfa\"\n    },\n    \"product\": {\n        \"id\": \"128ed9f0-25d3-422c-9d7a-dbd96312e79b\",\n        \"name\": \"Camiseta Básica 2\",\n        \"description\": \"Camiseta 100% algodão\",\n        \"basePrice\": \"79.98999999999999\",\n        \"isActive\": true,\n        \"createdAt\": \"2025-08-20T21:54:47.105Z\",\n        \"categoryId\": \"6b7d2fd0-8929-45c3-b045-8bea76aa45d2\",\n        \"offerId\": null\n    }\n}"
+				},
+				{
+					"name": "MissingArgumentsError",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cartId\": \"0fec99bb-7515-4a7c-8a32-921294cd352e\",\r\n  \"productId\": \"128ed9f0-25d3-422c-9d7a-dbd96312e79b\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cartitem/e6d11609-4b99-4406-9dbf-573d72420d2b",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cartitem",
+								"e6d11609-4b99-4406-9dbf-573d72420d2b"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3f-IeYPBMZh9NpiZXl3dW/kjwBK7Hs\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 14:13:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Quantidade deve ser fornecida para atualização.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "DeleteCartItem",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseUrl}}/cartitem/e6d11609-4b99-4406-9dbf-573d72420d2b",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"cartitem",
+						"e6d11609-4b99-4406-9dbf-573d72420d2b"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DeleteCartItem",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cartitem/e6d11609-4b99-4406-9dbf-573d72420d2b",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cartitem",
+								"e6d11609-4b99-4406-9dbf-573d72420d2b"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "157"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9d-FznNek7P/VuTpXAHHhXc+UZzGoQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Aug 2025 14:14:45 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"e6d11609-4b99-4406-9dbf-573d72420d2b\",\n    \"cartId\": \"0fec99bb-7515-4a7c-8a32-921294cd352e\",\n    \"productId\": \"128ed9f0-25d3-422c-9d7a-dbd96312e79b\",\n    \"quantity\": 4\n}"
+				}
+			]
+		}
+	]
+}
